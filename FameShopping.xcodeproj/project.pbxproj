@@ -15,9 +15,11 @@
 		662469B61E6906320001C31F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469B51E6906320001C31F /* MenuViewController.swift */; };
 		662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 662469B91E690F4A0001C31F /* ITRAirSideMenu.m */; };
 		662469C11E6918F10001C31F /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469C01E6918F10001C31F /* NetworkModel.swift */; };
+		BF95E2C3D09DF12EDF5DF6AB /* Pods_FameShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B29D162FB44FEC599B3FC8 /* Pods_FameShopping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64DDB78FCEC7401089CA01B6 /* Pods-FameShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FameShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		6624699C1E68EBB50001C31F /* FameShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FameShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6624699F1E68EBB60001C31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		662469A41E68EBB60001C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		662469B91E690F4A0001C31F /* ITRAirSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITRAirSideMenu.m; sourceTree = "<group>"; };
 		662469BF1E690FC50001C31F /* FameShopping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FameShopping-Bridging-Header.h"; sourceTree = "<group>"; };
 		662469C01E6918F10001C31F /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		B5B29D162FB44FEC599B3FC8 /* Pods_FameShopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FameShopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB441D473B5556AAD26B19DE /* Pods-FameShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FameShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF95E2C3D09DF12EDF5DF6AB /* Pods_FameShopping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				6624699E1E68EBB50001C31F /* FameShopping */,
 				6624699D1E68EBB50001C31F /* Products */,
+				D7EE56AC3C8BD840915D5870 /* Pods */,
+				DCDB2BDC594989A1D61F6C71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +124,23 @@
 			path = 3rdparty;
 			sourceTree = "<group>";
 		};
+		D7EE56AC3C8BD840915D5870 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64DDB78FCEC7401089CA01B6 /* Pods-FameShopping.debug.xcconfig */,
+				FB441D473B5556AAD26B19DE /* Pods-FameShopping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCDB2BDC594989A1D61F6C71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5B29D162FB44FEC599B3FC8 /* Pods_FameShopping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 662469AE1E68EBB60001C31F /* Build configuration list for PBXNativeTarget "FameShopping" */;
 			buildPhases = (
+				2A80A3AC765F30E185326860 /* [CP] Check Pods Manifest.lock */,
 				662469981E68EBB50001C31F /* Sources */,
 				662469991E68EBB50001C31F /* Frameworks */,
 				6624699A1E68EBB50001C31F /* Resources */,
+				EF6D27A92B627A03351A2A44 /* [CP] Embed Pods Frameworks */,
+				9122AFF47E62698A62DE4572 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +211,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A80A3AC765F30E185326860 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9122AFF47E62698A62DE4572 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6D27A92B627A03351A2A44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		662469981E68EBB50001C31F /* Sources */ = {
@@ -313,6 +388,7 @@
 		};
 		662469AF1E68EBB60001C31F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64DDB78FCEC7401089CA01B6 /* Pods-FameShopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
@@ -328,6 +404,7 @@
 		};
 		662469B01E68EBB60001C31F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB441D473B5556AAD26B19DE /* Pods-FameShopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
