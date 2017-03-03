@@ -15,6 +15,10 @@
 		662469B61E6906320001C31F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469B51E6906320001C31F /* MenuViewController.swift */; };
 		662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 662469B91E690F4A0001C31F /* ITRAirSideMenu.m */; };
 		662469C11E6918F10001C31F /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469C01E6918F10001C31F /* NetworkModel.swift */; };
+		66A563D31E692B760003B532 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D21E692B760003B532 /* Helpers.swift */; };
+		66A563D61E69450A0003B532 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D51E69450A0003B532 /* UserViewController.swift */; };
+		66A563D91E694D340003B532 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D81E694D340003B532 /* LoginViewController.swift */; };
+		66A563DB1E694EE00003B532 /* UITextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563DA1E694EE00003B532 /* UITextFieldFactory.swift */; };
 		BF95E2C3D09DF12EDF5DF6AB /* Pods_FameShopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B29D162FB44FEC599B3FC8 /* Pods_FameShopping.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,10 @@
 		662469B91E690F4A0001C31F /* ITRAirSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITRAirSideMenu.m; sourceTree = "<group>"; };
 		662469BF1E690FC50001C31F /* FameShopping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FameShopping-Bridging-Header.h"; sourceTree = "<group>"; };
 		662469C01E6918F10001C31F /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		66A563D21E692B760003B532 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		66A563D51E69450A0003B532 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		66A563D81E694D340003B532 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66A563DA1E694EE00003B532 /* UITextFieldFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldFactory.swift; sourceTree = "<group>"; };
 		B5B29D162FB44FEC599B3FC8 /* Pods_FameShopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FameShopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB441D473B5556AAD26B19DE /* Pods-FameShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FameShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +77,7 @@
 		6624699E1E68EBB50001C31F /* FameShopping */ = {
 			isa = PBXGroup;
 			children = (
+				66A563D41E6944F70003B532 /* User */,
 				662469BB1E690F6B0001C31F /* Util */,
 				662469B41E6906260001C31F /* MenuViewController */,
 				662469B11E6902280001C31F /* MainViewController */,
@@ -110,10 +119,29 @@
 		662469BB1E690F6B0001C31F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				66A563D21E692B760003B532 /* Helpers.swift */,
 				662469C01E6918F10001C31F /* NetworkModel.swift */,
 				662469BF1E690FC50001C31F /* FameShopping-Bridging-Header.h */,
+				66A563DA1E694EE00003B532 /* UITextFieldFactory.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		66A563D41E6944F70003B532 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				66A563D71E694CE40003B532 /* Login */,
+				66A563D51E69450A0003B532 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		66A563D71E694CE40003B532 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				66A563D81E694D340003B532 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AF5FD72F1E68FC70003A2343 /* 3rdparty */ = {
@@ -265,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A563D61E69450A0003B532 /* UserViewController.swift in Sources */,
 				662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */,
+				66A563DB1E694EE00003B532 /* UITextFieldFactory.swift in Sources */,
+				66A563D31E692B760003B532 /* Helpers.swift in Sources */,
 				662469B31E6902390001C31F /* MainViewController.swift in Sources */,
+				66A563D91E694D340003B532 /* LoginViewController.swift in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
 				662469C11E6918F10001C31F /* NetworkModel.swift in Sources */,
 				662469B61E6906320001C31F /* MenuViewController.swift in Sources */,

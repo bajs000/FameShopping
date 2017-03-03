@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import SVProgressHUD
+import SDWebImage
 
 class MainViewController: UITableViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var adImageDataSource:[[String:String]] = []
+    @IBOutlet var todayHeader:UIView!
+    @IBOutlet var siftHeader: UIView!
+    
+    var adImageDataSource:NSArray?
+    var typeDataSource:NSArray?
+    var todayDataSource:NSArray?
+    var imgDataSource:NSArray = []
     var adCollectionView:UICollectionView?
+    var typeCollectionView:UICollectionView?
+    var todayCollectionView:UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,37 +37,173 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        if section == 1 {
+            return 1
+        }
+        if section == 2 {
+            return 1
+        }
+        if  section == 3 {
+            return self.imgDataSource.count
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 || section == 1 {
+            return 0
+        }else {
+            return 55
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 || section == 1 {
+            return nil
+        }else if section == 2 {
+            return self.todayHeader
+        }else {
+            return self.siftHeader
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if self.adImageDataSource == nil {
+                return 0
+            }else {
+                return 152
+            }
+        }
+        if indexPath.section == 1 {
+            if self.typeDataSource == nil {
+                return 0
+            }else {
+                let count = (self.typeDataSource?.count)! / 4
+                let lastCount = count % 4
+                if lastCount != 0 {
+                    return CGFloat(count + 1) * 90
+                }else{
+                    return CGFloat(count) * 90
+                }
+            }
+        }
+        if indexPath.section == 2 {
+            if self.todayDataSource == nil {
+                return 0
+            }else {
+                let count = (self.todayDataSource?.count)! / 2
+                let lastCount = count % 2
+                let width = 171 * Helpers.screanSize().width / 375
+                let height = 265 * width / 171 + 10
+                if lastCount != 0 {
+                    return CGFloat(count + 1) * height + 10
+                }else{
+                    return CGFloat(count) * height + 10
+                }
+            }
+        }
+        if indexPath.section == 3 {
+            return 160
+        }
         return 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        if indexPath.row == 0 {
+        var cellIdentify = "adCell"
+        if indexPath.section == 0 {
+            cellIdentify = "adCell"
+        }else if indexPath.section == 1 {
+            cellIdentify = "typeCell"
+        }else if indexPath.section == 2 {
+            cellIdentify = "todayCell"
+        }else {
+            cellIdentify = "imgCell"
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath)
+        if indexPath.section == 0 {
             self.adCollectionView = (cell.viewWithTag(1) as! UICollectionView)
-            (cell.viewWithTag(1) as! UICollectionView).delegate = self
-            (cell.viewWithTag(1) as! UICollectionView).dataSource = self
+            self.adCollectionView?.delegate = self
+            self.adCollectionView?.dataSource = self
+        }else if indexPath.section == 1 {
+            self.typeCollectionView = (cell.viewWithTag(1) as! UICollectionView)
+            self.typeCollectionView?.delegate = self
+            self.typeCollectionView?.dataSource = self
+        }else if indexPath.section == 2 {
+            self.todayCollectionView = (cell.viewWithTag(1) as! UICollectionView)
+            self.todayCollectionView?.delegate = self
+            self.todayCollectionView?.dataSource = self
+        }else {
+            let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+            (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
         }
         return cell
     }
     
     // MARK: - Collection view data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.adImageDataSource.count
+        if collectionView == self.adCollectionView {
+            if self.adImageDataSource == nil {
+                return 0
+            }
+            return (self.adImageDataSource?.count)!
+        }else if collectionView == self.typeCollectionView{
+            if self.typeDataSource == nil {
+                return 0
+            }
+            return (self.typeDataSource?.count)!
+        }else if collectionView == self.todayCollectionView {
+            if self.todayDataSource == nil {
+                return 0
+            }
+            return (self.todayDataSource?.count)!
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        
+        var dic:NSDictionary = [:]
+        var url = ""
+        if collectionView == self.adCollectionView {
+            dic = self.adImageDataSource?[indexPath.row] as! NSDictionary
+            url =  Helpers.baseImgUrl() + (dic["bigpic"] as! String)
+            (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: url))
+        }else if collectionView == self.typeCollectionView {
+            dic = self.typeDataSource?[indexPath.row] as! NSDictionary
+            url =  Helpers.baseImgUrl() + (dic["type_img"] as! String)
+            (cell.viewWithTag(2) as! UILabel).text = dic["type_title"] as? String
+            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "main-type-" + String(indexPath.row))
+            (cell.viewWithTag(1) as! UIImageView).layer.cornerRadius = 25
+        }else if collectionView == self.todayCollectionView {
+            dic = self.todayDataSource?[indexPath.row] as! NSDictionary
+            url =  Helpers.baseImgUrl() + (dic["graphic"] as! String)
+            (cell.viewWithTag(2) as! UILabel).text = dic["goods_name"] as? String
+            (cell.viewWithTag(3) as! UILabel).text = "￥" + (dic["price"] as! String)
+            (cell.viewWithTag(4) as! UILabel).text = "￥" + (dic["price_y"] as! String)
+            (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: url))
+        }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
+        if collectionView == self.adCollectionView {
+            return collectionView.frame.size
+        }else if collectionView == self.typeCollectionView{
+            return CGSize(width: collectionView.frame.width / 4, height: 90)
+        }else if collectionView == self.todayCollectionView {
+            let width = 171 * Helpers.screanSize().width / 375
+            let height = 265 * width / 171
+            return CGSize(width: width, height: height)
+        }
+        return CGSize.zero
     }
     
     /*
@@ -109,12 +255,20 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
     }
 
     func requestMain() {
+        SVProgressHUD.show()
         NetworkModel.request([:], url: "/Public/index") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
-                self.adImageDataSource = (dic as! NSDictionary)["top_img"] as! [[String:String]]
+                SVProgressHUD.dismiss()
+                self.adImageDataSource = (dic as! NSDictionary)["top_img"] as? NSArray
+                self.typeDataSource = (dic as! NSDictionary)["goods_type"] as? NSArray
+                self.todayDataSource = (dic as! NSDictionary)["goods_tj"] as? NSArray
+                self.imgDataSource = ((dic as! NSDictionary)["brand"] as? NSArray)!
+                self.tableView.reloadData()
+                self.typeCollectionView?.reloadData()
                 self.adCollectionView?.reloadData()
+                self.todayCollectionView?.reloadData()
             }else{
-//                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }
     }

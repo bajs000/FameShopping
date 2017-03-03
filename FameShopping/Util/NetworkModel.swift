@@ -8,7 +8,7 @@
 
 import Foundation
 //import YTKNetwork
-//import SVProgressHUD
+import SVProgressHUD
 //import AFNetworking
 
 class NetworkModel: NSObject/*YTKRequest*/ {
@@ -81,7 +81,7 @@ class NetworkModel: NSObject/*YTKRequest*/ {
                 })
             }else{
                 print(error!)
-//                SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
             }
         })
         
@@ -123,7 +123,7 @@ class NetworkModel: NSObject/*YTKRequest*/ {
                 })
             }else{
                 print(error!)
-//                SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
             }
         })
         
