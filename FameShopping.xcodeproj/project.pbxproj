@@ -12,6 +12,40 @@
 		662469A51E68EBB60001C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662469A31E68EBB60001C31F /* Main.storyboard */; };
 		662469A71E68EBB60001C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662469A61E68EBB60001C31F /* Assets.xcassets */; };
 		662469AA1E68EBB60001C31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662469A81E68EBB60001C31F /* LaunchScreen.storyboard */; };
+		AF5FD75A1E68FC70003A2343 /* DrawerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7321E68FC70003A2343 /* DrawerAnimator.swift */; };
+		AF5FD75B1E68FC70003A2343 /* DrawerBackEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7331E68FC70003A2343 /* DrawerBackEaseAnimator.swift */; };
+		AF5FD75C1E68FC70003A2343 /* DrawerBounceEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7341E68FC70003A2343 /* DrawerBounceEaseAnimator.swift */; };
+		AF5FD75D1E68FC70003A2343 /* DrawerCircEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7351E68FC70003A2343 /* DrawerCircEaseAnimator.swift */; };
+		AF5FD75E1E68FC70003A2343 /* DrawerCubicEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7361E68FC70003A2343 /* DrawerCubicEaseAnimator.swift */; };
+		AF5FD75F1E68FC70003A2343 /* DrawerCurveEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7371E68FC70003A2343 /* DrawerCurveEaseAnimator.swift */; };
+		AF5FD7601E68FC70003A2343 /* DrawerElasticEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7381E68FC70003A2343 /* DrawerElasticEaseAnimator.swift */; };
+		AF5FD7611E68FC70003A2343 /* DrawerExpoEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7391E68FC70003A2343 /* DrawerExpoEaseAnimator.swift */; };
+		AF5FD7621E68FC70003A2343 /* DrawerLinearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73A1E68FC70003A2343 /* DrawerLinearAnimator.swift */; };
+		AF5FD7631E68FC70003A2343 /* DrawerQuadEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73B1E68FC70003A2343 /* DrawerQuadEaseAnimator.swift */; };
+		AF5FD7641E68FC70003A2343 /* DrawerQuartEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73C1E68FC70003A2343 /* DrawerQuartEaseAnimator.swift */; };
+		AF5FD7651E68FC70003A2343 /* DrawerQuintEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73D1E68FC70003A2343 /* DrawerQuintEaseAnimator.swift */; };
+		AF5FD7661E68FC70003A2343 /* DrawerSineEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73E1E68FC70003A2343 /* DrawerSineEaseAnimator.swift */; };
+		AF5FD7671E68FC70003A2343 /* DrawerSpringAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD73F1E68FC70003A2343 /* DrawerSpringAnimator.swift */; };
+		AF5FD7681E68FC70003A2343 /* DrawerTickAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7401E68FC70003A2343 /* DrawerTickAnimator.swift */; };
+		AF5FD7691E68FC70003A2343 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7411E68FC70003A2343 /* DrawerController.swift */; };
+		AF5FD76A1E68FC70003A2343 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5FD7421E68FC70003A2343 /* Info.plist */; };
+		AF5FD76B1E68FC70003A2343 /* DrawerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7451E68FC70003A2343 /* DrawerContent.swift */; };
+		AF5FD76C1E68FC70003A2343 /* DrawerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7461E68FC70003A2343 /* DrawerOption.swift */; };
+		AF5FD76D1E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7481E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift */; };
+		AF5FD76E1E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7491E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift */; };
+		AF5FD76F1E68FC70003A2343 /* DrawerEmbedRightControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD74A1E68FC70003A2343 /* DrawerEmbedRightControllerSegue.swift */; };
+		AF5FD7701E68FC70003A2343 /* DrawerFloatTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD74C1E68FC70003A2343 /* DrawerFloatTransition.swift */; };
+		AF5FD7711E68FC70003A2343 /* DrawerFoldTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD74D1E68FC70003A2343 /* DrawerFoldTransition.swift */; };
+		AF5FD7721E68FC70003A2343 /* DrawerParallaxTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD74E1E68FC70003A2343 /* DrawerParallaxTransition.swift */; };
+		AF5FD7731E68FC70003A2343 /* DrawerScaleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD74F1E68FC70003A2343 /* DrawerScaleTransition.swift */; };
+		AF5FD7741E68FC70003A2343 /* DrawerSlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7501E68FC70003A2343 /* DrawerSlideTransition.swift */; };
+		AF5FD7751E68FC70003A2343 /* DrawerSwingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7511E68FC70003A2343 /* DrawerSwingTransition.swift */; };
+		AF5FD7761E68FC70003A2343 /* DrawerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7521E68FC70003A2343 /* DrawerTransition.swift */; };
+		AF5FD7771E68FC70003A2343 /* DrawerZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7531E68FC70003A2343 /* DrawerZoomTransition.swift */; };
+		AF5FD7781E68FC70003A2343 /* DrawerGestureSensitivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7551E68FC70003A2343 /* DrawerGestureSensitivity.swift */; };
+		AF5FD7791E68FC70003A2343 /* DrawerSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7561E68FC70003A2343 /* DrawerSide.swift */; };
+		AF5FD77A1E68FC70003A2343 /* UIViewController+DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7571E68FC70003A2343 /* UIViewController+DrawerController.swift */; };
+		AF5FD77B1E68FC70003A2343 /* TranslucentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7591E68FC70003A2343 /* TranslucentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +56,41 @@
 		662469A61E68EBB60001C31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662469A91E68EBB60001C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		662469AB1E68EBB60001C31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5FD7321E68FC70003A2343 /* DrawerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7331E68FC70003A2343 /* DrawerBackEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBackEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7341E68FC70003A2343 /* DrawerBounceEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBounceEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7351E68FC70003A2343 /* DrawerCircEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerCircEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7361E68FC70003A2343 /* DrawerCubicEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerCubicEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7371E68FC70003A2343 /* DrawerCurveEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerCurveEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7381E68FC70003A2343 /* DrawerElasticEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerElasticEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7391E68FC70003A2343 /* DrawerExpoEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerExpoEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73A1E68FC70003A2343 /* DrawerLinearAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerLinearAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73B1E68FC70003A2343 /* DrawerQuadEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerQuadEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73C1E68FC70003A2343 /* DrawerQuartEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerQuartEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73D1E68FC70003A2343 /* DrawerQuintEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerQuintEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73E1E68FC70003A2343 /* DrawerSineEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSineEaseAnimator.swift; sourceTree = "<group>"; };
+		AF5FD73F1E68FC70003A2343 /* DrawerSpringAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSpringAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7401E68FC70003A2343 /* DrawerTickAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerTickAnimator.swift; sourceTree = "<group>"; };
+		AF5FD7411E68FC70003A2343 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
+		AF5FD7421E68FC70003A2343 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF5FD7431E68FC70003A2343 /* KWDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWDrawerController.h; sourceTree = "<group>"; };
+		AF5FD7451E68FC70003A2343 /* DrawerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerContent.swift; sourceTree = "<group>"; };
+		AF5FD7461E68FC70003A2343 /* DrawerOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerOption.swift; sourceTree = "<group>"; };
+		AF5FD7481E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerEmbedLeftControllerSegue.swift; sourceTree = "<group>"; };
+		AF5FD7491E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		AF5FD74A1E68FC70003A2343 /* DrawerEmbedRightControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerEmbedRightControllerSegue.swift; sourceTree = "<group>"; };
+		AF5FD74C1E68FC70003A2343 /* DrawerFloatTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerFloatTransition.swift; sourceTree = "<group>"; };
+		AF5FD74D1E68FC70003A2343 /* DrawerFoldTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerFoldTransition.swift; sourceTree = "<group>"; };
+		AF5FD74E1E68FC70003A2343 /* DrawerParallaxTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerParallaxTransition.swift; sourceTree = "<group>"; };
+		AF5FD74F1E68FC70003A2343 /* DrawerScaleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerScaleTransition.swift; sourceTree = "<group>"; };
+		AF5FD7501E68FC70003A2343 /* DrawerSlideTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSlideTransition.swift; sourceTree = "<group>"; };
+		AF5FD7511E68FC70003A2343 /* DrawerSwingTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSwingTransition.swift; sourceTree = "<group>"; };
+		AF5FD7521E68FC70003A2343 /* DrawerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerTransition.swift; sourceTree = "<group>"; };
+		AF5FD7531E68FC70003A2343 /* DrawerZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerZoomTransition.swift; sourceTree = "<group>"; };
+		AF5FD7551E68FC70003A2343 /* DrawerGestureSensitivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerGestureSensitivity.swift; sourceTree = "<group>"; };
+		AF5FD7561E68FC70003A2343 /* DrawerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSide.swift; sourceTree = "<group>"; };
+		AF5FD7571E68FC70003A2343 /* UIViewController+DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DrawerController.swift"; sourceTree = "<group>"; };
+		AF5FD7591E68FC70003A2343 /* TranslucentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslucentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +123,7 @@
 		6624699E1E68EBB50001C31F /* FameShopping */ = {
 			isa = PBXGroup;
 			children = (
+				AF5FD72F1E68FC70003A2343 /* 3rdparty */,
 				6624699F1E68EBB60001C31F /* AppDelegate.swift */,
 				662469A11E68EBB60001C31F /* ViewController.swift */,
 				662469A31E68EBB60001C31F /* Main.storyboard */,
@@ -62,6 +132,104 @@
 				662469AB1E68EBB60001C31F /* Info.plist */,
 			);
 			path = FameShopping;
+			sourceTree = "<group>";
+		};
+		AF5FD72F1E68FC70003A2343 /* 3rdparty */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7301E68FC70003A2343 /* DrawerController */,
+			);
+			path = 3rdparty;
+			sourceTree = "<group>";
+		};
+		AF5FD7301E68FC70003A2343 /* DrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7311E68FC70003A2343 /* Animator */,
+				AF5FD7411E68FC70003A2343 /* DrawerController.swift */,
+				AF5FD7421E68FC70003A2343 /* Info.plist */,
+				AF5FD7431E68FC70003A2343 /* KWDrawerController.h */,
+				AF5FD7441E68FC70003A2343 /* Models */,
+				AF5FD7471E68FC70003A2343 /* Segue */,
+				AF5FD74B1E68FC70003A2343 /* Transition */,
+				AF5FD7541E68FC70003A2343 /* Types */,
+				AF5FD7571E68FC70003A2343 /* UIViewController+DrawerController.swift */,
+				AF5FD7581E68FC70003A2343 /* View */,
+			);
+			path = DrawerController;
+			sourceTree = "<group>";
+		};
+		AF5FD7311E68FC70003A2343 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7321E68FC70003A2343 /* DrawerAnimator.swift */,
+				AF5FD7331E68FC70003A2343 /* DrawerBackEaseAnimator.swift */,
+				AF5FD7341E68FC70003A2343 /* DrawerBounceEaseAnimator.swift */,
+				AF5FD7351E68FC70003A2343 /* DrawerCircEaseAnimator.swift */,
+				AF5FD7361E68FC70003A2343 /* DrawerCubicEaseAnimator.swift */,
+				AF5FD7371E68FC70003A2343 /* DrawerCurveEaseAnimator.swift */,
+				AF5FD7381E68FC70003A2343 /* DrawerElasticEaseAnimator.swift */,
+				AF5FD7391E68FC70003A2343 /* DrawerExpoEaseAnimator.swift */,
+				AF5FD73A1E68FC70003A2343 /* DrawerLinearAnimator.swift */,
+				AF5FD73B1E68FC70003A2343 /* DrawerQuadEaseAnimator.swift */,
+				AF5FD73C1E68FC70003A2343 /* DrawerQuartEaseAnimator.swift */,
+				AF5FD73D1E68FC70003A2343 /* DrawerQuintEaseAnimator.swift */,
+				AF5FD73E1E68FC70003A2343 /* DrawerSineEaseAnimator.swift */,
+				AF5FD73F1E68FC70003A2343 /* DrawerSpringAnimator.swift */,
+				AF5FD7401E68FC70003A2343 /* DrawerTickAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		AF5FD7441E68FC70003A2343 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7451E68FC70003A2343 /* DrawerContent.swift */,
+				AF5FD7461E68FC70003A2343 /* DrawerOption.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF5FD7471E68FC70003A2343 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7481E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift */,
+				AF5FD7491E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift */,
+				AF5FD74A1E68FC70003A2343 /* DrawerEmbedRightControllerSegue.swift */,
+			);
+			path = Segue;
+			sourceTree = "<group>";
+		};
+		AF5FD74B1E68FC70003A2343 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD74C1E68FC70003A2343 /* DrawerFloatTransition.swift */,
+				AF5FD74D1E68FC70003A2343 /* DrawerFoldTransition.swift */,
+				AF5FD74E1E68FC70003A2343 /* DrawerParallaxTransition.swift */,
+				AF5FD74F1E68FC70003A2343 /* DrawerScaleTransition.swift */,
+				AF5FD7501E68FC70003A2343 /* DrawerSlideTransition.swift */,
+				AF5FD7511E68FC70003A2343 /* DrawerSwingTransition.swift */,
+				AF5FD7521E68FC70003A2343 /* DrawerTransition.swift */,
+				AF5FD7531E68FC70003A2343 /* DrawerZoomTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		AF5FD7541E68FC70003A2343 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7551E68FC70003A2343 /* DrawerGestureSensitivity.swift */,
+				AF5FD7561E68FC70003A2343 /* DrawerSide.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		AF5FD7581E68FC70003A2343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF5FD7591E68FC70003A2343 /* TranslucentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5FD76A1E68FC70003A2343 /* Info.plist in Resources */,
 				662469AA1E68EBB60001C31F /* LaunchScreen.storyboard in Resources */,
 				662469A71E68EBB60001C31F /* Assets.xcassets in Resources */,
 				662469A51E68EBB60001C31F /* Main.storyboard in Resources */,
@@ -137,8 +306,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5FD76F1E68FC70003A2343 /* DrawerEmbedRightControllerSegue.swift in Sources */,
+				AF5FD7631E68FC70003A2343 /* DrawerQuadEaseAnimator.swift in Sources */,
+				AF5FD76B1E68FC70003A2343 /* DrawerContent.swift in Sources */,
+				AF5FD7601E68FC70003A2343 /* DrawerElasticEaseAnimator.swift in Sources */,
+				AF5FD7731E68FC70003A2343 /* DrawerScaleTransition.swift in Sources */,
+				AF5FD7711E68FC70003A2343 /* DrawerFoldTransition.swift in Sources */,
+				AF5FD7771E68FC70003A2343 /* DrawerZoomTransition.swift in Sources */,
+				AF5FD7701E68FC70003A2343 /* DrawerFloatTransition.swift in Sources */,
+				AF5FD7781E68FC70003A2343 /* DrawerGestureSensitivity.swift in Sources */,
+				AF5FD7741E68FC70003A2343 /* DrawerSlideTransition.swift in Sources */,
+				AF5FD7721E68FC70003A2343 /* DrawerParallaxTransition.swift in Sources */,
+				AF5FD76C1E68FC70003A2343 /* DrawerOption.swift in Sources */,
+				AF5FD7791E68FC70003A2343 /* DrawerSide.swift in Sources */,
+				AF5FD7681E68FC70003A2343 /* DrawerTickAnimator.swift in Sources */,
+				AF5FD7611E68FC70003A2343 /* DrawerExpoEaseAnimator.swift in Sources */,
+				AF5FD7641E68FC70003A2343 /* DrawerQuartEaseAnimator.swift in Sources */,
 				662469A21E68EBB60001C31F /* ViewController.swift in Sources */,
+				AF5FD7621E68FC70003A2343 /* DrawerLinearAnimator.swift in Sources */,
+				AF5FD75A1E68FC70003A2343 /* DrawerAnimator.swift in Sources */,
+				AF5FD75B1E68FC70003A2343 /* DrawerBackEaseAnimator.swift in Sources */,
+				AF5FD7671E68FC70003A2343 /* DrawerSpringAnimator.swift in Sources */,
+				AF5FD75F1E68FC70003A2343 /* DrawerCurveEaseAnimator.swift in Sources */,
+				AF5FD7651E68FC70003A2343 /* DrawerQuintEaseAnimator.swift in Sources */,
+				AF5FD77B1E68FC70003A2343 /* TranslucentView.swift in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
+				AF5FD75D1E68FC70003A2343 /* DrawerCircEaseAnimator.swift in Sources */,
+				AF5FD77A1E68FC70003A2343 /* UIViewController+DrawerController.swift in Sources */,
+				AF5FD7691E68FC70003A2343 /* DrawerController.swift in Sources */,
+				AF5FD7661E68FC70003A2343 /* DrawerSineEaseAnimator.swift in Sources */,
+				AF5FD7751E68FC70003A2343 /* DrawerSwingTransition.swift in Sources */,
+				AF5FD7761E68FC70003A2343 /* DrawerTransition.swift in Sources */,
+				AF5FD75C1E68FC70003A2343 /* DrawerBounceEaseAnimator.swift in Sources */,
+				AF5FD76E1E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift in Sources */,
+				AF5FD76D1E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift in Sources */,
+				AF5FD75E1E68FC70003A2343 /* DrawerCubicEaseAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +502,7 @@
 				662469B01E68EBB60001C31F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
