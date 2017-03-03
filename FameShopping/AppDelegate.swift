@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        (self.window?.rootViewController as! DrawerController).setTransition(transition: DrawerZoomTransition() , side: .left)
         // Override point for customization after application launch.
         return true
     }

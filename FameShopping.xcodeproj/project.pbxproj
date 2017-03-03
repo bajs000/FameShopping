@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6624699F1E68EBB60001C31F /* AppDelegate.swift */; };
-		662469A21E68EBB60001C31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469A11E68EBB60001C31F /* ViewController.swift */; };
 		662469A51E68EBB60001C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662469A31E68EBB60001C31F /* Main.storyboard */; };
 		662469A71E68EBB60001C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662469A61E68EBB60001C31F /* Assets.xcassets */; };
 		662469AA1E68EBB60001C31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662469A81E68EBB60001C31F /* LaunchScreen.storyboard */; };
+		662469B31E6902390001C31F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469B21E6902390001C31F /* MainViewController.swift */; };
+		662469B61E6906320001C31F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469B51E6906320001C31F /* MenuViewController.swift */; };
 		AF5FD75A1E68FC70003A2343 /* DrawerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7321E68FC70003A2343 /* DrawerAnimator.swift */; };
 		AF5FD75B1E68FC70003A2343 /* DrawerBackEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7331E68FC70003A2343 /* DrawerBackEaseAnimator.swift */; };
 		AF5FD75C1E68FC70003A2343 /* DrawerBounceEaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FD7341E68FC70003A2343 /* DrawerBounceEaseAnimator.swift */; };
@@ -51,11 +52,12 @@
 /* Begin PBXFileReference section */
 		6624699C1E68EBB50001C31F /* FameShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FameShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6624699F1E68EBB60001C31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		662469A11E68EBB60001C31F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		662469A41E68EBB60001C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		662469A61E68EBB60001C31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662469A91E68EBB60001C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		662469AB1E68EBB60001C31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		662469B21E6902390001C31F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		662469B51E6906320001C31F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AF5FD7321E68FC70003A2343 /* DrawerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerAnimator.swift; sourceTree = "<group>"; };
 		AF5FD7331E68FC70003A2343 /* DrawerBackEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBackEaseAnimator.swift; sourceTree = "<group>"; };
 		AF5FD7341E68FC70003A2343 /* DrawerBounceEaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBounceEaseAnimator.swift; sourceTree = "<group>"; };
@@ -123,15 +125,32 @@
 		6624699E1E68EBB50001C31F /* FameShopping */ = {
 			isa = PBXGroup;
 			children = (
+				662469B41E6906260001C31F /* MenuViewController */,
+				662469B11E6902280001C31F /* MainViewController */,
 				AF5FD72F1E68FC70003A2343 /* 3rdparty */,
 				6624699F1E68EBB60001C31F /* AppDelegate.swift */,
-				662469A11E68EBB60001C31F /* ViewController.swift */,
 				662469A31E68EBB60001C31F /* Main.storyboard */,
 				662469A61E68EBB60001C31F /* Assets.xcassets */,
 				662469A81E68EBB60001C31F /* LaunchScreen.storyboard */,
 				662469AB1E68EBB60001C31F /* Info.plist */,
 			);
 			path = FameShopping;
+			sourceTree = "<group>";
+		};
+		662469B11E6902280001C31F /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				662469B21E6902390001C31F /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		662469B41E6906260001C31F /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				662469B51E6906320001C31F /* MenuViewController.swift */,
+			);
+			path = MenuViewController;
 			sourceTree = "<group>";
 		};
 		AF5FD72F1E68FC70003A2343 /* 3rdparty */ = {
@@ -320,9 +339,9 @@
 				AF5FD76C1E68FC70003A2343 /* DrawerOption.swift in Sources */,
 				AF5FD7791E68FC70003A2343 /* DrawerSide.swift in Sources */,
 				AF5FD7681E68FC70003A2343 /* DrawerTickAnimator.swift in Sources */,
+				662469B31E6902390001C31F /* MainViewController.swift in Sources */,
 				AF5FD7611E68FC70003A2343 /* DrawerExpoEaseAnimator.swift in Sources */,
 				AF5FD7641E68FC70003A2343 /* DrawerQuartEaseAnimator.swift in Sources */,
-				662469A21E68EBB60001C31F /* ViewController.swift in Sources */,
 				AF5FD7621E68FC70003A2343 /* DrawerLinearAnimator.swift in Sources */,
 				AF5FD75A1E68FC70003A2343 /* DrawerAnimator.swift in Sources */,
 				AF5FD75B1E68FC70003A2343 /* DrawerBackEaseAnimator.swift in Sources */,
@@ -337,6 +356,7 @@
 				AF5FD7661E68FC70003A2343 /* DrawerSineEaseAnimator.swift in Sources */,
 				AF5FD7751E68FC70003A2343 /* DrawerSwingTransition.swift in Sources */,
 				AF5FD7761E68FC70003A2343 /* DrawerTransition.swift in Sources */,
+				662469B61E6906320001C31F /* MenuViewController.swift in Sources */,
 				AF5FD75C1E68FC70003A2343 /* DrawerBounceEaseAnimator.swift in Sources */,
 				AF5FD76E1E68FC70003A2343 /* DrawerEmbedMainControllerSegue.swift in Sources */,
 				AF5FD76D1E68FC70003A2343 /* DrawerEmbedLeftControllerSegue.swift in Sources */,
@@ -463,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
 				INFOPLIST_FILE = FameShopping/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.work.FameShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
 				INFOPLIST_FILE = FameShopping/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.work.FameShopping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
