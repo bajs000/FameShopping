@@ -12,12 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var drawer: ITRAirSideMenu?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        (self.window?.rootViewController as! DrawerController).setTransition(transition: DrawerZoomTransition() , side: .left)
-        // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
+        let menuVC = storyboard.instantiateViewController(withIdentifier: "menu")
+        drawer = self.window?.rootViewController as? ITRAirSideMenu
+        drawer?.contentViewController = tabbar
+        drawer?.leftMenuViewController = menuVC
         return true
+    }
+    
+    func showLeftMenu() {
+        drawer?.presentLeftMenuViewController()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

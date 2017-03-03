@@ -11,6 +11,8 @@ import UIKit
 class MenuViewController: UITableViewController {
     
     let titleArr:[String] = ["女装","男装","美妆","鞋包","母婴","数码","品牌生活"]
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var nickname: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

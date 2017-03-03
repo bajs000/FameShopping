@@ -8,12 +8,15 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class MainViewController: UITableViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    var adImageDataSource:[[String:String]] = []
+    var adCollectionView:UICollectionView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        (UIApplication.shared.delegate?.window as! DrawerController)
-        self.drawerController?.setTransition(transition: DrawerFloatTransition(), side: .left)
+        self.title = "首页"
+        self.requestMain()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,25 +27,39 @@ class MainViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        if indexPath.row == 0 {
+            self.adCollectionView = (cell.viewWithTag(1) as! UICollectionView)
+            (cell.viewWithTag(1) as! UICollectionView).delegate = self
+            (cell.viewWithTag(1) as! UICollectionView).dataSource = self
+        }
         return cell
     }
-    */
+    
+    // MARK: - Collection view data source
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.adImageDataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        return cell
+    }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -87,5 +104,19 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func menuBtnDidClick(_ sender: Any) {
+        (UIApplication.shared.delegate as! AppDelegate).showLeftMenu()
+    }
 
+    func requestMain() {
+        NetworkModel.request([:], url: "/Public/index") { (dic) in
+            if Int((dic as! NSDictionary)["code"] as! String) == 200 {
+                self.adImageDataSource = (dic as! NSDictionary)["top_img"] as! [[String:String]]
+                self.adCollectionView?.reloadData()
+            }else{
+//                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+            }
+        }
+    }
+    
 }
