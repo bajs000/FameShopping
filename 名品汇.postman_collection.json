@@ -1,0 +1,2812 @@
+{
+	"id": "8bf66f13-12ab-e609-5300-e9494a331418",
+	"name": "名品汇",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "b5371a49-7339-1fb9-5731-e5c883ec769f",
+			"name": "会员类",
+			"description": "",
+			"order": [
+				"c75c11da-7e85-c00f-c340-9a560aab81f0",
+				"bf4d6952-e1dd-97ef-e0d5-0352171736cc",
+				"029923c4-f6ef-7e88-d25f-81a1f30e67ad",
+				"5635bc28-e0e7-0105-0c06-cedc0dd6aedd",
+				"04ba05ef-e7ff-6b33-41bd-0ab4e36ed035",
+				"9c662deb-2801-8310-bbe1-64bce4781746",
+				"7f45c621-4b31-eb90-ac8f-8040caf97046",
+				"414e87cb-ed31-7669-d85f-13652eedfd2c",
+				"7801058f-9e76-5c3b-eef2-f15bd8d6f25a",
+				"dae085b5-2dfd-157f-0339-fe68c1925eb9",
+				"055f547c-36c2-aa9a-793c-aeb73dfcba59",
+				"0e782743-34c5-9573-b7ee-456188485206",
+				"8d764c7b-a5c5-2db0-ef3b-f9ebe6caab8d",
+				"6dc69101-b2a1-ef12-d6e0-d6058f431bab",
+				"cbcdd058-cde1-35ff-2636-3e0fcef5fc58",
+				"5bc2aefc-3186-1bb8-46b0-8740b0f25931"
+			],
+			"owner": 0
+		},
+		{
+			"id": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b",
+			"name": "公共类",
+			"description": "",
+			"order": [
+				"4720944f-6783-7517-b65c-a3be81cf8dfe",
+				"9ada4cbc-8b62-c538-3468-2af2ae672612",
+				"77b7851b-b489-2d7c-a4f3-5eedc537e1bf",
+				"8273a44b-3e1d-cba9-c9b4-1b5ff450e1e7",
+				"765fe101-14fe-b70b-ae80-2d5b8f1c3282",
+				"c1f71b85-6683-e5dc-08bb-2197bb49789b",
+				"247e52ef-06bc-6399-a398-f6b6f33542a5"
+			],
+			"owner": 0,
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		},
+		{
+			"id": "c618e61d-04f5-5e95-6363-e08fb2c90625",
+			"name": "显示类",
+			"description": "",
+			"order": [
+				"79242858-8724-f491-e17b-c82288a4c587",
+				"ef990015-08f1-bd94-f00d-e7bd83402541",
+				"ec0a328b-faaa-3ef3-c360-4491520e28e1",
+				"43d02a2c-3990-277a-6242-4f387518f61b",
+				"d06550c6-1269-b557-ba72-7adff91d1a43",
+				"2d41432d-37c9-00d9-c297-e71d71feaeb9",
+				"c8da19bd-f478-e2a4-7db9-d9d8cd6661c2",
+				"d30d5208-a980-eb91-0cef-29811efd8a21",
+				"dfd58e14-c22c-9dfe-8c8f-aae94cc92363",
+				"45ded449-4096-fedb-75de-9f81efdb1dfb",
+				"3144eb38-6f9d-242c-b19d-496971fbb00c",
+				"572e34ff-978e-0198-6902-ab4c7f8bfeda",
+				"bd401491-b05f-c87a-b0f1-24b57474cbf1",
+				"d8148631-4a80-27eb-7d79-0af9ef83bf4e"
+			],
+			"owner": 0,
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		},
+		{
+			"id": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3",
+			"name": "订单类",
+			"description": "",
+			"order": [
+				"2093321e-c5da-ad75-bcb4-7d1050ca1534",
+				"ac4221a3-356e-1285-61d9-665697df57f9",
+				"1af9c3cf-c45d-03d4-d31e-ebf181a24085",
+				"82d5b322-689a-3f74-189f-1fc7184827ae",
+				"133752ac-9331-bbcc-a226-43fed7c04734",
+				"d730c947-21b5-3126-8b9a-25b1be762512",
+				"c3bca4e5-ae3f-466f-cda2-bafc78dabd1d",
+				"710118e8-42c7-225c-fde7-4cb5b9a097da",
+				"59d49d73-3220-7511-0118-2885c773308f",
+				"9b9e2f35-f196-df70-e496-79ec2a4bcfc5"
+			],
+			"owner": 0,
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		},
+		{
+			"id": "78c757fd-1df0-9555-70c2-a87165930581",
+			"name": "购物类",
+			"description": "",
+			"order": [
+				"079d4fa3-cc22-1884-d8e1-bd6c281257d9",
+				"7cc32270-8e73-b0e3-3aba-4896449c3700",
+				"b4e00761-e371-a295-d898-ce0a7fe2f7cb",
+				"1e68c4dc-c6e5-4a8e-13bc-f74bc9a793ca",
+				"f44642bc-57fc-c8a4-26ac-dd1b6e3d490a",
+				"4acd596e-95d8-8b6a-0cc5-8101b7f1130b"
+			],
+			"owner": 0,
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		},
+		{
+			"id": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb",
+			"name": "退款",
+			"description": "",
+			"order": [
+				"b2afbead-6d7e-b499-8ddd-94a523ed66bb",
+				"503cfe0b-40cc-e58c-fbfb-27000753e265",
+				"e7696366-d97e-037c-a31e-4bd91a1e81c2",
+				"d48b796c-eee1-4c15-b0be-fa92c75bd009",
+				"10b62b70-4eb9-7571-7236-f7834bb549de",
+				"df992cb6-37b8-4d5d-bb4a-cb14ee1ebcc2"
+			],
+			"owner": 0,
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		}
+	],
+	"timestamp": 1480037440910,
+	"owner": "1540173",
+	"public": false,
+	"requests": [
+		{
+			"id": "029923c4-f6ef-7e88-d25f-81a1f30e67ad",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/address",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009073390,
+			"name": "单个地址获取、修改展示",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "04ba05ef-e7ff-6b33-41bd-0ab4e36ed035",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/addre_off",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "4",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486454513626,
+			"name": "设置默认地址",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "055f547c-36c2-aa9a-793c-aeb73dfcba59",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/collect_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487748278813,
+			"name": "收藏展示",
+			"description": "type：0：商品；1：品牌",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "079d4fa3-cc22-1884-d8e1-bd6c281257d9",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/cart_num",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009157397,
+			"name": "购物车商品数量",
+			"description": "user_id：用户id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "78c757fd-1df0-9555-70c2-a87165930581"
+		},
+		{
+			"id": "0e782743-34c5-9573-b7ee-456188485206",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/collect_del",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "collect_id",
+					"value": "1:2:3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487314934865,
+			"name": "收藏删除",
+			"description": "collect_id：要删除的收藏id，数组、单个值都可",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "10b62b70-4eb9-7571-7236-f7834bb549de",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/refund_deteils",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_id",
+					"value": "31",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488244359534,
+			"name": "退款详情",
+			"description": "refund_no：退款单号",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": []
+		},
+		{
+			"id": "133752ac-9331-bbcc-a226-43fed7c04734",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_deteils",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS20170214169091",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487648504643,
+			"name": "订单详情",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "1af9c3cf-c45d-03d4-d31e-ebf181a24085",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_pinglist",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009130076,
+			"name": "我的订单--待评价",
+			"description": "user_id：用户id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "1af9c3cf-c45d-03d4-d31e-ebf181a24085",
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "1e68c4dc-c6e5-4a8e-13bc-f74bc9a793ca",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/cart_handle",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ac",
+					"value": "qstate",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "cart_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brand_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "num",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488248136674,
+			"name": "购物车操作",
+			"description": "cart_id：购物车商品id；\nac：操作：\nnum：数量操作，\ndstate：单个选择，\nbstate：品牌选择，\nqstate：全选；\ndel：删除",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": []
+		},
+		{
+			"id": "2093321e-c5da-ad75-bcb4-7d1050ca1534",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009120562,
+			"name": "我的订单--数量",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "247e52ef-06bc-6399-a398-f6b6f33542a5",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Index/order_staedit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS20170214165101",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488251020950,
+			"name": "支付测试--仅能更改状态",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": []
+		},
+		{
+			"id": "2d41432d-37c9-00d9-c297-e71d71feaeb9",
+			"headers": "",
+			"url": "http://www.guangchuqu.com/api.php/Public/fenxiang",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "105",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488183504071,
+			"name": "分类列表页",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": []
+		},
+		{
+			"id": "3144eb38-6f9d-242c-b19d-496971fbb00c",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/addre",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "province",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "city",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486451863689,
+			"name": "地址三级联动",
+			"description": "空返回省，传省返回市，传市返回区县；\nprovince：省id；\ncity：市id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "414e87cb-ed31-7669-d85f-13652eedfd2c",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/savetime",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "time",
+					"value": "周一到周五",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009093352,
+			"name": "收货时间修改",
+			"description": "time：收货时间",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "43d02a2c-3990-277a-6242-4f387518f61b",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_name",
+					"value": "山",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type_id",
+					"value": "2742",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nature",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481012933671,
+			"name": "商品列表页--搜索",
+			"description": "goods-name：商品名称；\ntype_id：分类id。\nnature：属性：remen：热门；xinpin：新品。\norder：排序：\npricez：价格递增；\npricej：价格递减；\nsalesz：销量递增；\nsalesj：销量递减",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "45ded449-4096-fedb-75de-9f81efdb1dfb",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/size_ld",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "217",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "XL",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481008992420,
+			"name": "规格选择",
+			"description": "goods_id：商品id；size：商品型号，为空时返回所有型号，不为空时返回该型号所有颜色；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "4720944f-6783-7517-b65c-a3be81cf8dfe",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Login/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_phone",
+					"value": "13530039446",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009044149,
+			"name": "登录",
+			"description": "user_phone：手机号\npassword：密码",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b"
+		},
+		{
+			"id": "4acd596e-95d8-8b6a-0cc5-8101b7f1130b",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/cart_addre",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481074775319,
+			"name": "确认订单--收货地址",
+			"description": "user_id：用户id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "78c757fd-1df0-9555-70c2-a87165930581"
+		},
+		{
+			"id": "503cfe0b-40cc-e58c-fbfb-27000753e265",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/refundlist_del",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_id",
+					"value": "6",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486523199417,
+			"name": "删除退款",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb"
+		},
+		{
+			"id": "5635bc28-e0e7-0105-0c06-cedc0dd6aedd",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/address_edadd",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ac",
+					"value": "save",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "uname",
+					"value": "张三",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "uphone",
+					"value": "15696154320",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "province",
+					"value": "500000",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "city",
+					"value": "500100",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "district",
+					"value": "500107",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address",
+					"value": "重庆市江北区观音桥建新南路浩博天庭6-6",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "time",
+					"value": "收货时间不限",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009077928,
+			"name": "地址添加、修改",
+			"description": "ac：操作项：save：修改；add：新增；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "572e34ff-978e-0198-6902-ab4c7f8bfeda",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/antistoplist",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481008982399,
+			"name": "热门关键词",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "59d49d73-3220-7511-0118-2885c773308f",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/pingadd_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "og_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009145097,
+			"name": "加入评价--展示",
+			"description": "og_id：评价订单详情id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "5bc2aefc-3186-1bb8-46b0-8740b0f25931",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/phone_edit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_phone",
+					"value": "15696154320",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484903869679,
+			"name": "修改手机号",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "6dc69101-b2a1-ef12-d6e0-d6058f431bab",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/pass_reset",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_phone",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484636630724,
+			"name": "找回密码--修改密码",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "710118e8-42c7-225c-fde7-4cb5b9a097da",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_del",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481075754934,
+			"name": "删除订单",
+			"description": "deal_no：订单编号",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "765fe101-14fe-b70b-ae80-2d5b8f1c3282",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/init",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486375314664,
+			"name": "初始化购物车商品不选中",
+			"description": "user_id：用户id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b"
+		},
+		{
+			"id": "77b7851b-b489-2d7c-a4f3-5eedc537e1bf",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/ajaxmobile",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_phone",
+					"value": "15696154320",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009052264,
+			"name": "获取验证码",
+			"description": "user_phone：手机号\ntype：操作类型：edit：忘记密码、修改密码；zhuce：注册",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b"
+		},
+		{
+			"id": "7801058f-9e76-5c3b-eef2-f15bd8d6f25a",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/collect_goods",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "253",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486608782975,
+			"name": "收藏商品",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "79242858-8724-f491-e17b-c82288a4c587",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009034107,
+			"name": "首页",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "7cc32270-8e73-b0e3-3aba-4896449c3700",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009161306,
+			"name": "购物车列表",
+			"description": "返回：brand_type=1：品牌选中；state=1：单个选中",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "7cc32270-8e73-b0e3-3aba-4896449c3700",
+			"folder": "78c757fd-1df0-9555-70c2-a87165930581"
+		},
+		{
+			"id": "7f45c621-4b31-eb90-ac8f-8040caf97046",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/address_del",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009089440,
+			"name": "地址删除 ",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "8273a44b-3e1d-cba9-c9b4-1b5ff450e1e7",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/editionAD",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "edition",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486373239289,
+			"name": "版本控制Android",
+			"description": "edition：版本号",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b"
+		},
+		{
+			"id": "82d5b322-689a-3f74-189f-1fc7184827ae",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "312",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "add_id",
+					"value": "39",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "shsj",
+					"value": "时间不限",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487926622094,
+			"name": "加入订单",
+			"description": "user_id：用户id\nadd_id：收货地址",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "8d764c7b-a5c5-2db0-ef3b-f9ebe6caab8d",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/pass_edit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "pass",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "passwords",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484628068611,
+			"name": "修改密码",
+			"description": "pass：原密码；password：新密码；passwords：确认密码",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "9ada4cbc-8b62-c538-3468-2af2ae672612",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Register/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_phone",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009048128,
+			"name": "注册",
+			"description": "user_phone：手机号\npassword：密码",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "3e2f9e88-5f8b-3b57-63ab-a5cd6781ed0b"
+		},
+		{
+			"id": "9b9e2f35-f196-df70-e496-79ec2a4bcfc5",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/ping_add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "og_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "score",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "message",
+					"value": "postman添加评价测试",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ping_img",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "sh_score",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bz_score",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "psy_score",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481077026001,
+			"name": "添加评价",
+			"description": "og_id：评价订单详情id；score：分数；message：评价内容；sh-score：送货速度；bz-score：商品包装；psy-score：配送员态度",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "9c662deb-2801-8310-bbe1-64bce4781746",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/receive_time",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009085034,
+			"name": "收货时间",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "ac4221a3-356e-1285-61d9-665697df57f9",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009124862,
+			"name": "我的订单--待付款、待收货",
+			"description": "user_id：用户id；status=0：待付款；status=1；待收获",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "b2afbead-6d7e-b499-8ddd-94a523ed66bb",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_refundlist",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486523143010,
+			"name": "退款列表",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb"
+		},
+		{
+			"id": "b4e00761-e371-a295-d898-ce0a7fe2f7cb",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/cart_add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "307",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "size_id",
+					"value": "411",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1483670032145,
+			"name": "加入购物车",
+			"description": "goods_id：商品id；\nuser_id：用户id\nsize_id：规格id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "78c757fd-1df0-9555-70c2-a87165930581"
+		},
+		{
+			"id": "bd401491-b05f-c87a-b0f1-24b57474cbf1",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/sousuo",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "艾",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009641885,
+			"name": "搜索品牌",
+			"description": "name：品牌名称",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "bf4d6952-e1dd-97ef-e0d5-0352171736cc",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/address_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009069401,
+			"name": "地址管理",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "c1f71b85-6683-e5dc-08bb-2197bb49789b",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Pay/online_pay",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS20170214165101",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488251006217,
+			"name": "支付",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418"
+		},
+		{
+			"id": "c3bca4e5-ae3f-466f-cda2-bafc78dabd1d",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_qrsh",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481075774052,
+			"name": "确认收货",
+			"description": "deal_no：订单编号",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "c75c11da-7e85-c00f-c340-9a560aab81f0",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/index",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009064760,
+			"name": "个人中心",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "c8da19bd-f478-e2a4-7db9-d9d8cd6661c2",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_details",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "252",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487226579973,
+			"name": "商品详情页",
+			"description": "goods_id：商品id。\ntype_id：分类；\ntype_roue_id：总分类；\nbrand_id：品牌id；\nsort：排序；\npass：首页推荐；\nprice：价格；\nprice_y：原价；\ntexture：材质；\nwashing_mode：洗涤方式；\njr_tj：今日推荐；\nqdjx_tj：秋冬精选推荐；\nis_hot：热门；\nis_new：新品；\nstock：库存；\nsales：销量；\nputaway：上架；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "cbcdd058-cde1-35ff-2636-3e0fcef5fc58",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/User/useredit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "img",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "云",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "birthday",
+					"value": "1993-03-15",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484722311616,
+			"name": "修改个人信息",
+			"description": "type='face'：修改头像；type='user_name'：修改用户名；type='birthday'：修改生日",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "d06550c6-1269-b557-ba72-7adff91d1a43",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brand_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nature",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487226403132,
+			"name": "商品列表页--品牌",
+			"description": "brand_id：品牌商id；\ntype_id：分类id。\nnature：属性：remen：热门；xinpin：新品。\norder：排序：\npricez：价格递增；\npricej：价格递减；\nsalesz：销量递增；\nsalesj：销量递减",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "d30d5208-a980-eb91-0cef-29811efd8a21",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_ping",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "217",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "score",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481009001877,
+			"name": "商品详情页--评价",
+			"description": "goods_id：商品id；\nscore：评价类型：\nhp：好评；\nzp：中评；\ncp：差评；\ntu：晒图评价\n<--返回数据注释-->\nnum_hp：好评；\nnum_zp：中评；\nnum_cp：差评；\nnum_st：晒图；\nscore：商品分数；\ntustater：是否上图；\nsh_score：送货速度分数；\nbz_score：商品包装分数；\npsy_score：配送员态度分数；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "d48b796c-eee1-4c15-b0be-fa92c75bd009",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/application_refund_add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS20161220174411",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_cause",
+					"value": "未收到货",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_message",
+					"value": "未收到货",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_uname",
+					"value": "云",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_uphone",
+					"value": "15696154320",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "img",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487237309339,
+			"name": "申请退款--添加",
+			"description": "og_id：退款订单商品id；\nrefund_cause：退款原因；\nrefund_message：说明描述；\nrefund_uname：联系人名称；\nrefund_uphone：联系人电话；\nimg：详细图片；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb"
+		},
+		{
+			"id": "d730c947-21b5-3126-8b9a-25b1be762512",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/order_undo",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481075748997,
+			"name": "取消订单",
+			"description": "deal_no：订单编号",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618d7bf-2491-97a9-6aad-4e0fc1cbdcb3"
+		},
+		{
+			"id": "d8148631-4a80-27eb-7d79-0af9ef83bf4e",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/logistics",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS201612019222",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481017821557,
+			"name": "查看物流",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "dae085b5-2dfd-157f-0339-fe68c1925eb9",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/collect_brand",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "278",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "brand_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486608806603,
+			"name": "收藏品牌",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "b5371a49-7339-1fb9-5731-e5c883ec769f"
+		},
+		{
+			"id": "df992cb6-37b8-4d5d-bb4a-cb14ee1ebcc2",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/refund_wuliu_add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refund_id",
+					"value": "7",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "express",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "express_no",
+					"value": "123456489789",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486524359745,
+			"name": "添加退货物流",
+			"description": "refund_no：退款单号；\nexpress：快递id\nexpress_no：快递单号；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb"
+		},
+		{
+			"id": "dfd58e14-c22c-9dfe-8c8f-aae94cc92363",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_ping",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "goods_id",
+					"value": "217",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481008997305,
+			"name": "评价页",
+			"description": "goods_id：商品id；\nnum_hp：好评；\nnum_zp：中评；\nnum_cp：差评；\nnum_st：晒图；\nscore：商品分数；\ntustater：是否上图；\nsh_score：送货速度分数；\nbz_score：商品包装分数；\npsy_score：配送员态度分数；",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "e7696366-d97e-037c-a31e-4bd91a1e81c2",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Order/application_refund",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deal_no",
+					"value": "MS20161220174411",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486720972928,
+			"name": "申请退款--展示",
+			"description": "",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "37e736c2-a2bd-aa46-7ad9-4e16b3409afb"
+		},
+		{
+			"id": "ec0a328b-faaa-3ef3-c360-4491520e28e1",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/goods_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type_id",
+					"value": "2742",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nature",
+					"value": "remen",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "order",
+					"value": "pricej",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481012931898,
+			"name": "商品列表页--分类",
+			"description": "type_id：分类id。\nnature：属性：remen：热门；xinpin：新品。\norder：排序：\npricez：价格递增；\npricej：价格递减；\nsalesz：销量递增；\nsalesj：销量递减",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "ef990015-08f1-bd94-f00d-e7bd83402541",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Public/type_list",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type_id",
+					"value": "2742",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487237304256,
+			"name": "分类页",
+			"description": "type_id：分类id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "ef990015-08f1-bd94-f00d-e7bd83402541",
+			"folder": "c618e61d-04f5-5e95-6363-e08fb2c90625"
+		},
+		{
+			"id": "f44642bc-57fc-c8a4-26ac-dd1b6e3d490a",
+			"headers": "",
+			"url": "http://mingpinhui.cq1b1.com/api.php/Cart/cart_order",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "version",
+					"value": "1.1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "apikey",
+					"value": "f74dd39951a0b6bbed0fe73606ea5476",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "user_id",
+					"value": "312",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1488183762512,
+			"name": "确认订单--商品及总价",
+			"description": "user_id：用户id",
+			"collectionId": "8bf66f13-12ab-e609-5300-e9494a331418",
+			"responses": []
+		}
+	]
+}
