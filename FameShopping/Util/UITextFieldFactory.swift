@@ -90,3 +90,44 @@ class PhoneTextField: UITextFieldFactory {
     }
     
 }
+
+class CodeTextField: PhoneTextField {
+    
+    var sendCodeBtn:UIButton?
+    var count = 0
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let rightView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: self.frame.size.height))
+        sendCodeBtn = UIButton(type: .custom)
+        rightView.addSubview(sendCodeBtn!)
+        sendCodeBtn?.frame = CGRect(x: rightView.frame.origin.x, y: 7.5, width: 100, height: 30)
+        sendCodeBtn?.setTitle("发送验证码", for: .normal)
+        sendCodeBtn?.setTitleColor(UIColor.colorWithHexString(hex: "e14575"), for: .normal)
+        sendCodeBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        sendCodeBtn?.backgroundColor = UIColor.colorWithHexString(hex: "e4e3e3")
+        sendCodeBtn?.layer.cornerRadius = 15
+        self.rightView = rightView
+        self.rightViewMode = .always
+    }
+    
+    func startCount() -> Void {
+        count = 60
+        sendCodeBtn?.isUserInteractionEnabled = false
+        sendCodeBtn?.setTitle(String(count) + "秒后再试", for: .normal)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown(_:)), userInfo: nil, repeats: true)
+    }
+    
+    func countDown(_ time:Timer) -> Void {
+        count = count - 1
+        if count <= 0 {
+            time.invalidate()
+            sendCodeBtn?.setTitle("发送验证码", for: .normal)
+            sendCodeBtn?.isUserInteractionEnabled = true
+            return
+        }
+        sendCodeBtn?.setTitle(String(count) + "秒后再试", for: .normal)
+    }
+    
+    
+}
