@@ -9,7 +9,7 @@
 import Foundation
 //import YTKNetwork
 import SVProgressHUD
-//import AFNetworking
+import AFNetworking
 
 class NetworkModel: NSObject/*YTKRequest*/ {
     
@@ -134,36 +134,86 @@ class NetworkModel: NSObject/*YTKRequest*/ {
 
 class UploadNetwork: NSObject {
     
+    public class func request(_ param: [String:String], data: Any, paramName: String, url:String, complete: ((_ responseObject:Any) -> Void)?) -> Void {
+        let tempParam = NSMutableDictionary(dictionary: param)
+        tempParam.setValue("f74dd39951a0b6bbed0fe73606ea5476", forKey: "apikey")
+        tempParam.setValue("1.1", forKey: "version")
+        
+        let manager = AFHTTPSessionManager.init()
+        manager.responseSerializer.acceptableContentTypes = Set(arrayLiteral: "text/html","text/plain","application/json","application/xml")
+        let reqUrl = "http://mingpinhui.cq1b1.com/api.php" + url
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        manager.post(reqUrl, parameters: tempParam, constructingBodyWith: { (formData) in
+            let format = DateFormatter.init()
+            format.dateFormat = "yyyyMMddHHmmss"
+            let timeName = format.string(from: Date()) + ".jpg"
+            let imgData = UIImageJPEGRepresentation(data as! UIImage, 0.2)
+            formData.appendPart(withFileData: imgData!, name: paramName, fileName: timeName, mimeType: "image/jpg")
+        }, progress: { (progress) in
+            print(progress.fractionCompleted)
+            SVProgressHUD.showProgress(Float(progress.fractionCompleted))
+            if progress.fractionCompleted >= 1 {
+                SVProgressHUD.dismiss()
+            }
+        }, success: { (task, responseObject) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if responseObject != nil {
+                complete!(responseObject!)
+            }
+        }) { (task, error) in
+            print(error)
+        }
+    }
+    
 //    public class func request(_ param: [String:String], data: Any, paramName: String, url:String, complete: ((_ responseObject:Any) -> Void)?) -> Void {
 //        let tempParam = NSMutableDictionary(dictionary: param)
 //        tempParam.setValue("f74dd39951a0b6bbed0fe73606ea5476", forKey: "apikey")
 //        tempParam.setValue("1.1", forKey: "version")
-//        tempParam.setValue("ios", forKey: "terminal")
 //        
-//        let manager = AFHTTPSessionManager.init()
-//        manager.responseSerializer.acceptableContentTypes = Set(arrayLiteral: "text/html","text/plain")
-//        let reqUrl = "http://cdelivery.cq1b1.com/api.php/index" + url
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//        manager.post(reqUrl, parameters: tempParam, constructingBodyWith: { (formData) in
-//            let format = DateFormatter.init()
-//            format.dateFormat = "yyyyMMddHHmmss"
-//            let timeName = format.string(from: Date()) + ".jpg"
-//            let imgData = UIImageJPEGRepresentation(data as! UIImage, 0.2)
-//            formData.appendPart(withFileData: imgData!, name: paramName, fileName: timeName, mimeType: "image/jpg")
-//        }, progress: { (progress) in
-//            print(progress.fractionCompleted)
-//            SVProgressHUD.showProgress(Float(progress.fractionCompleted))
-//            if progress.fractionCompleted >= 1 {
-//                SVProgressHUD.dismiss()
-//            }
-//        }, success: { (task, responseObject) in
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//            if responseObject != nil {
-//                complete!(responseObject!)
-//            }
-//        }) { (task, error) in
-//            print(error)
+//        let reqUrl = "http://mingpinhui.cq1b1.com/api.php" + url
+//        var req = URLRequest(url: URL(string: reqUrl)!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        let format = DateFormatter.init()
+//        format.dateFormat = "yyyyMMddHHmmss"
+//        let timeName = format.string(from: Date()) + ".jpg"
+//        let imgData = UIImageJPEGRepresentation(data as! UIImage, 0.2)
+//        let body = NSMutableString()
+//        let keys = tempParam.allKeys
+//        print(keys)
+//        for i in 0...keys.count - 1 {
+//            let key = keys[i]
+//            body.appendFormat("%@\r\n", "-----------------------------JHMLY622510")
+//            body.appendFormat("Content-Disposition: form-data; name=\"%@\"\r\n\r\n", (key as! String))
+//            body.appendFormat("%@\r\n", (tempParam[(key as! String)] as! String))
 //        }
+//        
+//        body.appendFormat("%@\r\n", "-----------------------------JHMLY622510")
+//        body.appendFormat("Content-Disposition: form-data; name=\"img\"; filename=%@\r\n",timeName)
+//        body.appendFormat("Content-Type: image/jpg\r\n\r\n")
+//        
+//        let myData = NSMutableData()
+//        myData.append(body.data(using: String.Encoding.utf8.rawValue)!)
+//        myData.append(imgData!)
+//        myData.append("\r\n-------------------------------JHMLY622510".data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!)
+//        let content = "multipart/form-data; boundary=---------------------------JHMLY622510"
+//        req.setValue(content, forHTTPHeaderField: "Content-Type")
+//        req.setValue(String(myData.length), forHTTPHeaderField: "Content-Length")
+//        req.httpBody = myData as Data
+//        req.httpMethod = "POST"
+//        NSURLConnection.sendAsynchronousRequest(req, queue: OperationQueue()) { (response, data, error) in
+//            if error == nil {
+//                DispatchQueue.main.async {
+//                    do {
+//                        let dic =  try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+//                        print(dic)
+//                    } catch {
+//                        
+//                    }
+//                }
+//            }else {
+//                print(error!)
+//            }
+//        }
+//    
 //    }
     
 }

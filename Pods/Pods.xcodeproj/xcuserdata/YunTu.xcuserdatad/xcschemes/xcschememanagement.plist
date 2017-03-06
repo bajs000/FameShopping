@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,7 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2C471BF5B5E3277AD2D2CADE510BFAF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2E0B1B8783B9EB838E5FFAA62DD6F428</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F20A70986D69A6086671BD2382F261E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A30A1CA67F82DBF350806861E98236E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

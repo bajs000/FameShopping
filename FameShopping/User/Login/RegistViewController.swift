@@ -129,8 +129,51 @@ class RegistViewController: UIViewController {
         NetworkModel.request(["user_phone":self.phoneNum.text!,"password":self.password.text!], url: "/Register/index") { (dic) in
             if ((dic as! NSDictionary)["code"] as! NSNumber).intValue == 200 {
                 SVProgressHUD.dismiss()
-                print(dic)
-                // TODO: - add regist success
+                let dict = dic as! NSDictionary
+                let userDefault = UserDefaults.standard
+                if !(((dict["uinfo"] as! NSDictionary)["address"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["address"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["address"] as! String), forKey: "ADDRESS")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["birthday"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["birthday"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["birthday"] as! String), forKey: "BIRTHDAY")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["head_graphic"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["head_graphic"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["head_graphic"] as! String), forKey: "AVATAR")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["money"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["money"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["money"] as! String), forKey: "MONEY")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["password"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["password"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["password"] as! String), forKey: "PASSWORD")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["reg_time"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["reg_time"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["reg_time"] as! String), forKey: "REGTIME")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["status"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["status"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["status"] as! String), forKey: "STATUS")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["u_area"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["u_area"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["u_area"] as! String), forKey: "UAREA")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["u_city"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["u_city"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["u_city"] as! String), forKey: "UCITY")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["u_province"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["u_province"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["u_province"] as! String), forKey: "UPROVINCE")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["user_id"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["user_id"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["user_id"] as! String), forKey: "USERID")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["user_key"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["user_key"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["user_key"] as! String), forKey: "USERKEY")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["user_name"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["user_name"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["user_name"] as! String), forKey: "USERNAME")
+                }
+                if !(((dict["uinfo"] as! NSDictionary)["user_phone"] as! NSObject).isKind(of: NSNull.self)) &&  ((dict["uinfo"] as! NSDictionary)["user_phone"] as! String).characters.count > 0{
+                    userDefault.set(((dict["uinfo"] as! NSDictionary)["user_phone"] as! String), forKey: "USERPHONE")
+                }
+                _ = self.navigationController?.popToRootViewController(animated: true)
             }else{
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
