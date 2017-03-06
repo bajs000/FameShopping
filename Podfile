@@ -8,5 +8,6 @@ target 'FameShopping' do
   pod 'SVProgressHUD'
   pod 'Masonry'
   pod 'SDWebImage'
+  pod 'AFNetworking'
   
 end
