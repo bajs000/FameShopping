@@ -184,7 +184,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="l1S-FU-G92">
-                                                    <rect key="frame" x="10" y="63" width="171" height="265"/>
+                                                    <rect key="frame" x="10" y="62.5" width="171" height="265"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="171" height="265"/>
@@ -757,7 +757,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiJ-FB-gyU">
-                                                    <rect key="frame" x="285" y="19" width="57.5" height="17"/>
+                                                    <rect key="frame" x="284.5" y="19" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.25098039220000001" green="0.25490196079999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -916,10 +916,51 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addNewBtn" destination="keC-HO-jhO" id="5Z0-sN-V13"/>
+                        <outlet property="nullView" destination="X53-ZH-q0t" id="dVf-bp-jBU"/>
                         <segue destination="zkr-s2-Lei" kind="show" identifier="eidtPush" id="fum-X5-vaY"/>
+                        <segue destination="zkr-s2-Lei" kind="show" identifier="edit" id="TGw-ld-wUL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OCJ-q0-q9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="X53-ZH-q0t">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="address-null" translatesAutoresizingMaskIntoConstraints="NO" id="k0h-FD-Q76">
+                            <rect key="frame" x="112" y="209" width="150" height="150"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无收货地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUu-nl-tTA">
+                            <rect key="frame" x="132" y="389" width="111" height="22"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.25098039215686274" green="0.25490196078431371" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keC-HO-jhO">
+                            <rect key="frame" x="87" y="441" width="200" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="1JJ-OM-hlU"/>
+                                <constraint firstAttribute="height" constant="50" id="2N4-cO-nNE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="+  添加收货地址">
+                                <color key="titleColor" red="0.88235294117647056" green="0.27058823529411763" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="addNewBtnDidClick:" destination="hOz-Kf-2We" eventType="touchUpInside" id="NwU-Fe-w8m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="keC-HO-jhO" firstAttribute="centerX" secondItem="AUu-nl-tTA" secondAttribute="centerX" id="2PE-Vm-A7C"/>
+                        <constraint firstItem="k0h-FD-Q76" firstAttribute="centerY" secondItem="X53-ZH-q0t" secondAttribute="centerY" constant="-50" id="8Ep-LA-uPW"/>
+                        <constraint firstItem="AUu-nl-tTA" firstAttribute="centerX" secondItem="k0h-FD-Q76" secondAttribute="centerX" id="Oey-fk-6Aw"/>
+                        <constraint firstItem="k0h-FD-Q76" firstAttribute="centerX" secondItem="X53-ZH-q0t" secondAttribute="centerX" id="P3c-EL-oFt"/>
+                        <constraint firstItem="AUu-nl-tTA" firstAttribute="top" secondItem="k0h-FD-Q76" secondAttribute="bottom" constant="30" id="S9r-ew-MO8"/>
+                        <constraint firstItem="keC-HO-jhO" firstAttribute="top" secondItem="AUu-nl-tTA" secondAttribute="bottom" constant="30" id="o8U-GZ-y3F"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="4256.8000000000002" y="2350.9745127436286"/>
         </scene>
@@ -938,17 +979,12 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-mx-9JG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="Sdt-fd-u3W">
-                                    <rect key="frame" x="0.0" y="83" width="375" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="EXW-Um-WY3">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EXW-Um-WY3" id="bVP-c8-Xlb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXt-Yr-owD">
@@ -1198,6 +1234,8 @@
                         <outlet property="acceptView" destination="0xx-I1-wMk" id="WdQ-94-gwb"/>
                         <outlet property="areaView" destination="M9M-SW-6zL" id="6s8-wB-e3o"/>
                         <outlet property="blackView" destination="GIg-a9-P3o" id="3z2-RB-vft"/>
+                        <outlet property="deleteBtn" destination="C71-hs-toq" id="20e-Bz-xPm"/>
+                        <outlet property="footerView" destination="4eB-Yy-KDN" id="XDe-2j-izc"/>
                         <outlet property="pickerView" destination="1aC-Ud-Yhb" id="6nN-TD-zR9"/>
                         <outlet property="pickerViewBottom" destination="1fg-Tr-pum" id="oKT-qF-UIo"/>
                         <outlet property="tableView" destination="Uhk-mx-9JG" id="wWS-cB-7hK"/>
@@ -1206,6 +1244,33 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxR-ch-5g4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="4eB-Yy-KDN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C71-hs-toq">
+                            <rect key="frame" x="37" y="31" width="300" height="50"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.27058823529999998" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Sdw-WC-Wsc"/>
+                            </constraints>
+                            <state key="normal" title="删除">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteBtnDidClick:" destination="zkr-s2-Lei" eventType="touchUpInside" id="n9b-TC-r3h"/>
+                                <action selector="logoutBtnDidClick:" destination="6nz-48-FKH" eventType="touchUpInside" id="IS9-4Q-ba1"/>
+                                <action selector="registBtnDidClick:" destination="Cc2-q0-7K5" eventType="touchUpInside" id="3qj-gx-gUx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="C71-hs-toq" firstAttribute="centerY" secondItem="4eB-Yy-KDN" secondAttribute="centerY" id="1XD-SQ-S7o"/>
+                        <constraint firstItem="C71-hs-toq" firstAttribute="leading" secondItem="4eB-Yy-KDN" secondAttribute="leading" constant="37" id="9g9-1b-kWP"/>
+                        <constraint firstAttribute="trailing" secondItem="C71-hs-toq" secondAttribute="trailing" constant="38" id="yTa-oU-Ofv"/>
+                    </constraints>
+                </view>
                 <tapGestureRecognizer id="P4g-kx-4zL">
                     <connections>
                         <action selector="areaViewDidTap:" destination="zkr-s2-Lei" id="uc9-Wz-78R"/>
@@ -1758,6 +1823,7 @@
     </scenes>
     <resources>
         <image name="access" width="10" height="18"/>
+        <image name="address-null" width="150" height="150"/>
         <image name="logIn-pwd" width="20" height="27"/>
         <image name="login-bg" width="379" height="697"/>
         <image name="login-eye" width="14" height="8"/>
@@ -1774,4 +1840,7 @@
         <image name="user-need-pay" width="25" height="25"/>
         <image name="user-refund" width="27" height="27"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TGw-ld-wUL"/>
+    </inferredMetricsTieBreakers>
 </document>

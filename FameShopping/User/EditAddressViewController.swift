@@ -19,6 +19,8 @@ class EditAddressViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     @IBOutlet var tap: UITapGestureRecognizer!
     @IBOutlet weak var acceptView: UIView!
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     var titleDic = ["0":[["title":"收货人","detail":""],["title":"手机号","detail":""],["title":"收货时间","detail":""]],
                     "1":[["title":"地址类型","detail":" "],["title":"省份","detail":""],["title":"城市","detail":""],["title":"区/县","detail":""],["title":"详细地址","detail":""]]]
@@ -32,11 +34,25 @@ class EditAddressViewController: UIViewController, UITableViewDelegate, UITableV
     var currentIndexPath:IndexPath?
     var currentRow:Int = 0
     
+    var editAddress:NSDictionary?{
+        didSet{
+            titleDic = ["0":[["title":"收货人","detail":editAddress?["uname"] as! String],["title":"手机号","detail":editAddress?["uphone"] as! String],["title":"收货时间","detail":editAddress?["time"] as! String]],
+                        "1":[["title":"地址类型","detail":" "],["title":"省份","detail":editAddress?["province_name"] as! String],["title":"城市","detail":editAddress?["city_name"] as! String],["title":"区/县","detail":editAddress?["district_name"] as! String],["title":"详细地址","detail":editAddress?["address"] as! String]]]
+            province = ["id":editAddress?["province"] as! String,"name":editAddress?["province_name"] as! String]
+            city = ["id":editAddress?["city"] as! String,"name":editAddress?["city_name"] as! String]
+            district = ["id":editAddress?["district"] as! String,"name":editAddress?["district_name"] as! String]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(rightBarItemDidClick(_:)))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.colorWithHexString(hex: "777777")
-        
+        if self.editAddress == nil {
+            self.footerView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 1)
+            self.deleteBtn.isHidden = true
+        }
+        self.tableView.tableFooterView = self.footerView
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -259,6 +275,10 @@ class EditAddressViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    @IBAction func deleteBtnDidClick(_ sender: Any) {
+        self.requestDeleteAddress()
+    }
+    
     @IBAction func pickerActionDidClick(_ sender: UIButton) {
         if sender.tag == 1 {
             
@@ -281,6 +301,36 @@ class EditAddressViewController: UIViewController, UITableViewDelegate, UITableV
                 titleDic["1"] = arr
                 self.tableView.reloadData()
             }
+            
+            if currentIndexPath?.row == 1 {
+                var arr = titleDic["1"]
+                var dic = arr?[2]
+                if  dic != nil {
+                    dic?["detail"] = ""
+                    arr?.remove(at: 2)
+                    arr?.insert(dic!, at: 2)
+                }
+                var dic1 = arr?[3]
+                if  dic1 != nil {
+                    dic1?["detail"] = ""
+                    arr?.remove(at: 3)
+                    arr?.insert(dic1!, at: 3)
+                }
+                titleDic["1"] = arr
+                self.tableView.reloadData()
+            }else if currentIndexPath?.row == 2 {
+                var arr = titleDic["1"]
+                var dic = arr?[(currentIndexPath?.row)!]
+                if  dic != nil {
+                    dic?["detail"] = (areaDataSource?[currentRow] as! NSDictionary)["name"] as? String
+                    arr?.remove(at: (currentIndexPath?.row)!)
+                    arr?.insert(dic!, at: (currentIndexPath?.row)!)
+                    titleDic["1"] = arr
+                    self.tableView.reloadData()
+                }
+            }
+            
+            
         }
         self.areaViewDidTap(tap)
     }
@@ -367,13 +417,27 @@ class EditAddressViewController: UIViewController, UITableViewDelegate, UITableV
                  "city":(city?["id"] as! String),
                  "district":(district?["id"] as! String),
                  "address":(titleDic["1"]?[4]["detail"])!]
-        print(param)
+        if self.editAddress != nil {
+            param["ac"] = "save"
+            param["add_id"] = self.editAddress?["add_id"] as? String
+        }
         SVProgressHUD.show()
         NetworkModel.request(param as NSDictionary, url: "/User/address_edadd") { (dic) in
-            print(dic)
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                 SVProgressHUD.dismiss()
-                
+                _ = self.navigationController?.popViewController(animated: true)
+            }else{
+                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+            }
+        }
+    }
+    
+    func requestDeleteAddress() -> Void {
+        SVProgressHUD.show()
+        NetworkModel.request(["add_id":self.editAddress?["add_id"] as! String], url: "/User/address_del") { (dic) in
+            if Int((dic as! NSDictionary)["code"] as! String) == 200 {
+                SVProgressHUD.dismiss()
+                _ = self.navigationController?.popViewController(animated: true)
             }else{
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }

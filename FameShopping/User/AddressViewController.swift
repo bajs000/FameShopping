@@ -11,6 +11,10 @@ import SVProgressHUD
 
 class AddressViewController: UITableViewController {
 
+    
+    @IBOutlet var nullView: UIView!
+    @IBOutlet weak var addNewBtn: UIButton!
+    
     var addressList:NSArray?
     
     override func viewDidLoad() {
@@ -18,18 +22,25 @@ class AddressViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.title = "地址管理"
-        self.requestAddressList()
+        self.addNewBtn.layer.borderColor = UIColor.colorWithHexString(hex: "E14575").cgColor
+        self.addNewBtn.layer.borderWidth = 1.5
+        self.showNullView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.requestAddressList()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         if self.addressList == nil {
-            return 1
+            return 0
         }
         return (self.addressList?.count)! + 1
     }
@@ -60,6 +71,7 @@ class AddressViewController: UITableViewController {
             cell.viewWithTag(5)?.layer.borderWidth = 1.5
             cell.viewWithTag(5)?.layer.borderColor = UIColor.colorWithHexString(hex: "AAAAAA").cgColor
             (cell.viewWithTag(4) as! UIButton).addTarget(self, action: #selector(deleteAddressBtnDidClick(_:)), for: .touchUpInside)
+            (cell.viewWithTag(5) as! UIButton).addTarget(self, action: #selector(editAddressBtnDidClick(_:)), for: .touchUpInside)
             
             let dic = self.addressList?[indexPath.section] as! NSDictionary
             
@@ -113,21 +125,46 @@ class AddressViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "edit" {
+            let vc = segue.destination as! EditAddressViewController
+            vc.editAddress = sender as? NSDictionary
+            vc.title = "编辑地址"
+        }else if segue.identifier == "eidtPush" {
+            let vc = segue.destination as! EditAddressViewController
+            vc.title = "新增地址"
+        }
     }
-    */
+    
+    func showNullView() -> Void {
+        nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64)
+        self.tableView.tableFooterView = nullView
+    }
+    
+    func hideNullView() -> Void {
+        self.tableView.tableFooterView = nil
+    }
+    
+    @IBAction func addNewBtnDidClick(_ sender: Any) {
+        self.performSegue(withIdentifier: "eidtPush", sender: nil)
+    }
 
-    func deleteAddressBtnDidClick(_ sender:UIButton) -> Void {
+    func deleteAddressBtnDidClick(_ sender: UIButton) -> Void {
         let cell = Helpers.findSuperViewClass(UITableViewCell.self, with: sender)
         let indexPath = self.tableView.indexPath(for: cell as! UITableViewCell)
         let dic = self.addressList?[(indexPath?.section)!] as! NSDictionary
         self.requestDeleteAddress(dic["add_id"] as! String)
+    }
+    
+    func editAddressBtnDidClick(_ sender: UIButton) -> Void {
+        let cell = Helpers.findSuperViewClass(UITableViewCell.self, with: sender)
+        let indexPath = self.tableView.indexPath(for: cell as! UITableViewCell)
+        let dic = self.addressList?[(indexPath?.section)!] as! NSDictionary
+        self.performSegue(withIdentifier: "edit", sender: dic)
     }
     
     func requestAddressList() -> Void {
@@ -137,10 +174,16 @@ class AddressViewController: UITableViewController {
                 SVProgressHUD.dismiss()
                 self.addressList = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
+                if self.addressList != nil && (self.addressList?.count)! > 0 {
+                    self.hideNullView()
+                }else {
+                    self.showNullView()
+                }
             }else{
                 self.addressList = nil
                 self.tableView.reloadData()
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+                self.showNullView()
             }
         }
     }
