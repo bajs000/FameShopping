@@ -1,32 +1,32 @@
 //
-//  MenuViewController.swift
+//  EvaluateViewController.swift
 //  FameShopping
 //
-//  Created by YunTu on 2017/3/3.
+//  Created by YunTu on 2017/3/7.
 //  Copyright © 2017年 YunTu. All rights reserved.
 //
 
 import UIKit
 import SVProgressHUD
-import SDWebImage
 
-class MenuViewController: UITableViewController {
+class EvaluateViewController: GoodBaseVC {
+
+    @IBOutlet var headerView: UIView!
     
-    let titleArr:[String] = ["女装","男装","美妆","鞋包","母婴","数码","品牌生活"]
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var nickname: UILabel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserModel.share.avatar.characters.count > 0 {
-            self.avatar.sd_setImage(with: URL(string: UserModel.share.avatar), placeholderImage: UIImage(named: "user-default-icon"))
-            self.nickname.text = UserModel.share.userName
-            self.avatar.layer.cornerRadius = 44
-        }
+        self.requestEvaluate()
     }
 
+    public class func getInstance() -> EvaluateViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "evaluate")
+        return vc as! EvaluateViewController
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -34,21 +34,30 @@ class MenuViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArr.count
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.headerView
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "menu-icon-" + String(indexPath.row))
-        (cell.viewWithTag(2) as! UILabel).text = self.titleArr[indexPath.row]
+
+        // Configure the cell...
+
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 
     /*
@@ -95,5 +104,17 @@ class MenuViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func requestEvaluate() -> Void {
+        SVProgressHUD.show()
+        NetworkModel.request([:], url: "") { (dic) in
+            if Int((dic as! NSDictionary)["code"] as! String) == 200 {
+                SVProgressHUD.show()
+                print(dic)
+            }else{
+                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+            }
+        }
+    }
 
 }

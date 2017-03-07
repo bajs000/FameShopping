@@ -240,6 +240,11 @@ class UserModel: NSObject {
     }
     
     func logout() -> Void {
+        let userDefault = UserDefaults.standard
+        for key in userDefault.dictionaryRepresentation().keys {
+            userDefault.removeObject(forKey: key)
+        }
+        userDefault.synchronize()
         _address = nil
         _birthday = nil
         _avatar = nil
@@ -265,6 +270,10 @@ class UserModel: NSObject {
     
     func resetPushStatus() -> Void {
         _pushStatus = nil
+    }
+    
+    func resetUserPhone() -> Void {
+        _userPhone = nil
     }
     
 }

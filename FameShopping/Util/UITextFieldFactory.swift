@@ -129,5 +129,32 @@ class CodeTextField: PhoneTextField {
         sendCodeBtn?.setTitle(String(count) + "秒后再试", for: .normal)
     }
     
+}
+
+class PhoneCodeTextField: UITextFieldFactory {
+    override func awakeFromNib() {
+        left = 0
+        self.addTarget(self, action: #selector(textFieldDidBeginEdit(_:)), for: .editingDidBegin)
+        self.addTarget(self, action: #selector(textFieldDidBeginEdit(_:)), for: .editingDidEnd)
+    }
     
+    func textFieldDidBeginEdit(_ sender:UITextField) {
+        self.setNeedsDisplay()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        let context:CGContext = UIGraphicsGetCurrentContext()!
+        context.setLineCap(.round)
+        context.setLineWidth(1)
+        context.setAllowsAntialiasing(true)
+        if self.isEditing {
+            context.setStrokeColor(red: 168.0 / 255.0, green: 214.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0)
+        }else{
+            context.setStrokeColor(red: 170.0 / 255.0, green: 170.0 / 255.0, blue: 170.0 / 255.0, alpha: 1.0)
+        }
+        context.beginPath()
+        context.move(to: CGPoint(x: 0, y: self.bounds.size.height - 1))
+        context.addLine(to: CGPoint(x: self.bounds.size.width, y: self.bounds.size.height - 1))
+        context.strokePath()
+    }
 }

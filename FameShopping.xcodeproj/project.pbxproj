@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660501AD1E6E44F100F899FD /* BindingPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660501AC1E6E44F100F899FD /* BindingPhoneViewController.swift */; };
+		660501AF1E6E494A00F899FD /* NewPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660501AE1E6E494A00F899FD /* NewPhoneViewController.swift */; };
+		660501B11E6E498D00F899FD /* UpdatePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660501B01E6E498D00F899FD /* UpdatePhoneViewController.swift */; };
+		660501B31E6E537200F899FD /* UpdatePwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660501B21E6E537200F899FD /* UpdatePwdViewController.swift */; };
 		662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6624699F1E68EBB60001C31F /* AppDelegate.swift */; };
 		662469A51E68EBB60001C31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662469A31E68EBB60001C31F /* Main.storyboard */; };
 		662469A71E68EBB60001C31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662469A61E68EBB60001C31F /* Assets.xcassets */; };
@@ -15,6 +19,12 @@
 		662469B61E6906320001C31F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469B51E6906320001C31F /* MenuViewController.swift */; };
 		662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 662469B91E690F4A0001C31F /* ITRAirSideMenu.m */; };
 		662469C11E6918F10001C31F /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662469C01E6918F10001C31F /* NetworkModel.swift */; };
+		6698DF651E6E59FF0037D646 /* AbortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF641E6E59FF0037D646 /* AbortViewController.swift */; };
+		6698DF681E6E86B90037D646 /* GoodPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF671E6E86B90037D646 /* GoodPageViewController.swift */; };
+		6698DF6C1E6E87AF0037D646 /* GoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF6B1E6E87AF0037D646 /* GoodViewController.swift */; };
+		6698DF6E1E6E87C50037D646 /* EvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF6D1E6E87C50037D646 /* EvaluateViewController.swift */; };
+		6698DF701E6E87D80037D646 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF6F1E6E87D80037D646 /* DetailViewController.swift */; };
+		6698DF741E6E95190037D646 /* YRCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6698DF731E6E95190037D646 /* YRCoverFlowLayout.m */; };
 		66A563D31E692B760003B532 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D21E692B760003B532 /* Helpers.swift */; };
 		66A563D61E69450A0003B532 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D51E69450A0003B532 /* UserViewController.swift */; };
 		66A563D91E694D340003B532 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563D81E694D340003B532 /* LoginViewController.swift */; };
@@ -32,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		64DDB78FCEC7401089CA01B6 /* Pods-FameShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FameShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FameShopping/Pods-FameShopping.debug.xcconfig"; sourceTree = "<group>"; };
+		660501AC1E6E44F100F899FD /* BindingPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingPhoneViewController.swift; sourceTree = "<group>"; };
+		660501AE1E6E494A00F899FD /* NewPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhoneViewController.swift; sourceTree = "<group>"; };
+		660501B01E6E498D00F899FD /* UpdatePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePhoneViewController.swift; sourceTree = "<group>"; };
+		660501B21E6E537200F899FD /* UpdatePwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePwdViewController.swift; sourceTree = "<group>"; };
 		6624699C1E68EBB50001C31F /* FameShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FameShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6624699F1E68EBB60001C31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		662469A41E68EBB60001C31F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +58,13 @@
 		662469B91E690F4A0001C31F /* ITRAirSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITRAirSideMenu.m; sourceTree = "<group>"; };
 		662469BF1E690FC50001C31F /* FameShopping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FameShopping-Bridging-Header.h"; sourceTree = "<group>"; };
 		662469C01E6918F10001C31F /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		6698DF641E6E59FF0037D646 /* AbortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbortViewController.swift; sourceTree = "<group>"; };
+		6698DF671E6E86B90037D646 /* GoodPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodPageViewController.swift; sourceTree = "<group>"; };
+		6698DF6B1E6E87AF0037D646 /* GoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodViewController.swift; sourceTree = "<group>"; };
+		6698DF6D1E6E87C50037D646 /* EvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluateViewController.swift; sourceTree = "<group>"; };
+		6698DF6F1E6E87D80037D646 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6698DF721E6E95190037D646 /* YRCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRCoverFlowLayout.h; sourceTree = "<group>"; };
+		6698DF731E6E95190037D646 /* YRCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRCoverFlowLayout.m; sourceTree = "<group>"; };
 		66A563D21E692B760003B532 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		66A563D51E69450A0003B532 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		66A563D81E694D340003B532 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +132,7 @@
 		662469B11E6902280001C31F /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6698DF661E6E861D0037D646 /* GoodsDetailVC */,
 				662469B21E6902390001C31F /* MainViewController.swift */,
 			);
 			path = MainViewController;
@@ -145,6 +167,26 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		6698DF661E6E861D0037D646 /* GoodsDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				6698DF671E6E86B90037D646 /* GoodPageViewController.swift */,
+				6698DF6B1E6E87AF0037D646 /* GoodViewController.swift */,
+				6698DF6D1E6E87C50037D646 /* EvaluateViewController.swift */,
+				6698DF6F1E6E87D80037D646 /* DetailViewController.swift */,
+			);
+			path = GoodsDetailVC;
+			sourceTree = "<group>";
+		};
+		6698DF711E6E94FE0037D646 /* YRCoverFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				6698DF721E6E95190037D646 /* YRCoverFlowLayout.h */,
+				6698DF731E6E95190037D646 /* YRCoverFlowLayout.m */,
+			);
+			path = YRCoverFlowLayout;
+			sourceTree = "<group>";
+		};
 		66A563D41E6944F70003B532 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +197,11 @@
 				66A563E01E6D1DD50003B532 /* AccountViewController.swift */,
 				66A563E21E6D346C0003B532 /* AddressViewController.swift */,
 				66A563E41E6D3D210003B532 /* EditAddressViewController.swift */,
+				660501AC1E6E44F100F899FD /* BindingPhoneViewController.swift */,
+				660501AE1E6E494A00F899FD /* NewPhoneViewController.swift */,
+				660501B01E6E498D00F899FD /* UpdatePhoneViewController.swift */,
+				660501B21E6E537200F899FD /* UpdatePwdViewController.swift */,
+				6698DF641E6E59FF0037D646 /* AbortViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -179,6 +226,7 @@
 		AF5FD72F1E68FC70003A2343 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				6698DF711E6E94FE0037D646 /* YRCoverFlowLayout */,
 				662469B71E690F4A0001C31F /* DrawerViewController */,
 			);
 			path = 3rdparty;
@@ -325,22 +373,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660501B31E6E537200F899FD /* UpdatePwdViewController.swift in Sources */,
 				AF4DDF6E1E6C465C00BAEFDF /* RegistViewController.swift in Sources */,
 				66A563D61E69450A0003B532 /* UserViewController.swift in Sources */,
 				662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */,
+				660501AF1E6E494A00F899FD /* NewPhoneViewController.swift in Sources */,
+				6698DF651E6E59FF0037D646 /* AbortViewController.swift in Sources */,
 				66A563DB1E694EE00003B532 /* UITextFieldFactory.swift in Sources */,
 				66A563D31E692B760003B532 /* Helpers.swift in Sources */,
+				660501B11E6E498D00F899FD /* UpdatePhoneViewController.swift in Sources */,
 				66A563DF1E6D0BE20003B532 /* SettingViewController.swift in Sources */,
 				66A563E51E6D3D210003B532 /* EditAddressViewController.swift in Sources */,
 				662469B31E6902390001C31F /* MainViewController.swift in Sources */,
+				6698DF6C1E6E87AF0037D646 /* GoodViewController.swift in Sources */,
+				6698DF701E6E87D80037D646 /* DetailViewController.swift in Sources */,
+				6698DF6E1E6E87C50037D646 /* EvaluateViewController.swift in Sources */,
 				66A563DD1E6CEF5D0003B532 /* UserInfoViewController.swift in Sources */,
+				6698DF741E6E95190037D646 /* YRCoverFlowLayout.m in Sources */,
 				AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */,
 				66A563D91E694D340003B532 /* LoginViewController.swift in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
+				660501AD1E6E44F100F899FD /* BindingPhoneViewController.swift in Sources */,
 				66A563E31E6D346C0003B532 /* AddressViewController.swift in Sources */,
 				66A563E11E6D1DD50003B532 /* AccountViewController.swift in Sources */,
 				662469C11E6918F10001C31F /* NetworkModel.swift in Sources */,
 				AF4DDF731E6C52B300BAEFDF /* UserModel.swift in Sources */,
+				6698DF681E6E86B90037D646 /* GoodPageViewController.swift in Sources */,
 				662469B61E6906320001C31F /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

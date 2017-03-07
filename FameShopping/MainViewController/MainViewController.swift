@@ -26,12 +26,17 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "首页"
+        let titleArr = ["首页","收藏","购物车","我的"]
+        for i in 0...titleArr.count - 1 {
+            let tabItem = self.tabBarController?.tabBar.items?[i]
+            self.item(tabItem!, title: titleArr[i], normalImg: "tabbar-unselect-" + String(i), selectImg: "tabbar-select-" + String(i))
+        }
         self.requestMain()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        (UIApplication.shared.delegate as! AppDelegate).drawer?.panGestureEnabled = true
+        (UIApplication.shared.delegate as! AppDelegate).drawer?.panGestureEnabled = (UserModel.share.userId.characters.count > 0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -216,6 +221,15 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
         return CGSize.zero
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.todayCollectionView {
+            let dic = self.todayDataSource?[indexPath.row] as! NSDictionary
+            let vc = GoodPageViewController.getInstance()
+            vc.detailDataSource = dic
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -260,8 +274,24 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
         // Pass the selected object to the new view controller.
     }
     */
+    func item(_ tabItem: UITabBarItem, title: String, normalImg: String, selectImg: String) -> Void {
+        let normalImage = UIImage(named: normalImg)?.withRenderingMode(.alwaysOriginal)
+        let selectImage = UIImage(named: selectImg)?.withRenderingMode(.alwaysOriginal)
+        tabItem.image = normalImage
+        tabItem.selectedImage = selectImage
+        tabItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.colorWithHexString(hex: "E14575")], for: .selected)
+        tabItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.colorWithHexString(hex: "404146"),NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: .normal)
+        
+        tabItem.title = title
+        
+    }
+    
     @IBAction func menuBtnDidClick(_ sender: Any) {
-        (UIApplication.shared.delegate as! AppDelegate).showLeftMenu()
+        if UserModel.share.userId.characters.count > 0 {
+            (UIApplication.shared.delegate as! AppDelegate).showLeftMenu()
+        }else {
+            self.navigationController?.pushViewController(LoginViewController.getInstance(), animated: true)
+        }
     }
 
     func requestMain() {

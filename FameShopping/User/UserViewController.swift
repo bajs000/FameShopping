@@ -29,6 +29,9 @@ class UserViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         if UserModel.share.userId.characters.count > 0 {
             self.requestUserInfo()
+        }else {
+            self.alertLabel.text = "登录    注册"
+            self.avatarBtn.setImage(UIImage(named: "user-default-icon"), for: .normal)
         }
     }
     
@@ -74,6 +77,8 @@ class UserViewController: UITableViewController {
             self.navigationController?.pushViewController(SettingViewController.getInstance(), animated: true)
         }else if indexPath.row == 2 {
             self.navigationController?.pushViewController(AccountViewController.getInstance(), animated: true)
+        }else if indexPath.row == 3 {
+            self.performSegue(withIdentifier: "abortPush", sender: nil)
         }
     }
     
@@ -146,7 +151,7 @@ class UserViewController: UITableViewController {
                     userDefault.set(((dict["user"] as! NSDictionary)["user_phone"] as! String), forKey: "USERPHONE")
                 }
                 self.userInfo = dic as? NSDictionary
-                self.avatarBtn.sd_setImage(with: URL(string: UserModel.share.avatar), for: .normal)
+                self.avatarBtn.sd_setImage(with: URL(string: UserModel.share.avatar), for: .normal ,placeholderImage:UIImage(named: "user-default-icon"))
                 self.alertLabel.text = UserModel.share.userName
             }else{
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
