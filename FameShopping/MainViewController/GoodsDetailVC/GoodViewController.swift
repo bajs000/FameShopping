@@ -34,6 +34,11 @@ class GoodViewController: GoodBaseVC, UICollectionViewDelegate, UICollectionView
         self.requestGood()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.pageViewController?.navTitleBtnChanged(1)
+    }
+    
     public class func getInstance() -> GoodViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "good")
@@ -108,6 +113,7 @@ class GoodViewController: GoodBaseVC, UICollectionViewDelegate, UICollectionView
     // MARK: - UIWebView delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {
         let webViewHeight = webView.scrollView.contentSize.height
+        self.pageViewController?.webViewHeight = webViewHeight
         self.footerView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: webViewHeight + 53)
         self.tableView.beginUpdates()
         self.tableView.tableFooterView = self.footerView

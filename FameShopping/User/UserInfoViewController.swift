@@ -221,7 +221,6 @@ class UserInfoViewController: UITableViewController, UINavigationControllerDeleg
         }
         if avatarIcon != nil {
             UploadNetwork.request(param, data: avatarIcon!, paramName: "img", url: "/User/useredit") { (dic) in
-                print(dic)
                 if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                     SVProgressHUD.dismiss()
                     UserModel.share.resetAvatar()

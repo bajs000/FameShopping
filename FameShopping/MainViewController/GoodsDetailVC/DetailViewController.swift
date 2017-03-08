@@ -10,8 +10,31 @@ import UIKit
 
 class DetailViewController: GoodBaseVC {
 
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var webView: UIWebView!
+    var webViewHeight:CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.webView.scrollView.isScrollEnabled = false
+        if self.pageViewController?.goodInfo != nil {
+            let html = (self.pageViewController?.goodInfo?["list"] as! NSDictionary)["details"] as? String
+            self.webView.loadHTMLString(html!, baseURL: nil)
+        }
+        if ((self.pageViewController?.webViewHeight) != nil)        {
+            self.footerView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: webViewHeight! + 53)
+            self.tableView.beginUpdates()
+            self.tableView.tableFooterView = self.footerView
+            self.tableView.endUpdates()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+        self.pageViewController?.navTitleBtnChanged(3)
     }
     
     public class func getInstance() -> DetailViewController {
@@ -28,24 +51,25 @@ class DetailViewController: GoodBaseVC {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if self.pageViewController?.goodInfo != nil {
+            return 1
+        }
         return 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+        let dic = self.pageViewController?.goodInfo?["list"] as? NSDictionary
+        (cell.viewWithTag(11) as! UILabel).text = dic?["goods_name"] as? String
+        (cell.viewWithTag(12) as! UILabel).text = dic?["breand_name"] as? String
+        (cell.viewWithTag(13) as! UILabel).text = dic?["texture"] as? String
+        (cell.viewWithTag(14) as! UILabel).text = dic?["washing_mode"] as? String
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
