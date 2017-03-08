@@ -10,13 +10,24 @@ import UIKit
 import SVProgressHUD
 import SDWebImage
 
+enum CartActionType:String {
+    case click      = "dstate"
+    case all        = "qstate"
+    case brand      = "bstate"
+    case delete     = "del"
+    case num        = "num"
+}
+
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var nullView: UIView!
     @IBOutlet weak var selectGoodsBtn: UIButton!
+    @IBOutlet weak var allSelectBtn: UIButton!
+    @IBOutlet weak var totalMoney: UILabel!
     
     var cartDataSource:NSDictionary?
+    var currentAction:Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +77,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let headerBtn = UIButton(type: .custom)
         headerBtn.frame = headerView.frame
         headerView.addSubview(headerBtn)
+        headerBtn.tag = section
+        headerBtn.addTarget(self, action: #selector(brandSelectBtnDidClick(_:)), for: .touchUpInside)
         let selectImg = UIImageView(image: UIImage(named: "cart-select"))
         selectImg.frame = CGRect(x: 12, y: 10.5, width: 14, height: 14)
         headerView.addSubview(selectImg)
@@ -75,6 +88,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         headerLabel.textColor = UIColor.colorWithHexString(hex: "666666")
         let dic = (self.cartDataSource?["list"] as! NSArray)[section] as! NSDictionary
         headerLabel.text = dic["brand_name"] as? String
+        if (dic["brand_type"] as! NSNumber).intValue == 0 {
+            selectImg.image = UIImage(named: "cart-unselect")
+        }
         return headerView
     }
     
@@ -94,13 +110,26 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         (cell.viewWithTag(9) as! UILabel).text = "￥" + (dic["price"] as! String)
         cell.viewWithTag(6)?.layer.borderColor = UIColor.colorWithHexString(hex: "AAAAAA").cgColor
         cell.viewWithTag(6)?.layer.borderWidth = 1
+        (cell.viewWithTag(7) as! UIButton).addTarget(self, action: #selector(deleteBtnDidClick(_:)), for: .touchUpInside)
+        (cell.viewWithTag(11) as! UIButton).addTarget(self, action: #selector(numBtnDidClick(_:)), for: .touchUpInside)
+        (cell.viewWithTag(12) as! UIButton).addTarget(self, action: #selector(numBtnDidClick(_:)), for: .touchUpInside)
         (cell.viewWithTag(13) as! UILabel).text = dic["num"] as? String
         if (((self.cartDataSource?["list"] as! NSArray)[indexPath.section] as! NSDictionary)["cart"] as! NSArray).count - 1 == indexPath.row {
             cell.viewWithTag(8)?.isHidden = true
         }else {
             cell.viewWithTag(8)?.isHidden = false
         }
+        if Int(dic["state"] as! String) == 1 {
+            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "cart-select")
+        }else {
+            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "cart-unselect")
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentAction = indexPath
+        self.requestCartAction(.click)
     }
 
     /*
@@ -117,6 +146,42 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tabBarController?.selectedIndex = 0
     }
     
+    @IBAction func allSelectBtnDidClick(_ sender: Any) {
+        self.requestCartAction(.all)
+    }
+    
+    func deleteBtnDidClick(_ sender: UIButton) -> Void {
+        let cell = Helpers.findSuperViewClass(UITableViewCell.self, with: sender)
+        let indexPath = self.tableView.indexPath(for: cell as! UITableViewCell)
+        currentAction = indexPath
+        self.requestCartAction(.delete)
+    }
+    
+    func brandSelectBtnDidClick(_ sender: UIButton) -> Void {
+        currentAction = sender
+        self.requestCartAction(.brand)
+    }
+    
+    func numBtnDidClick(_ sender: UIButton) -> Void {
+        let cell = Helpers.findSuperViewClass(UITableViewCell.self, with: sender)
+        var num = Int((cell?.viewWithTag(13) as! UILabel).text!)
+        if sender.tag == 11 {
+            num = num! + 1
+        }else {
+            num = num! - 1
+            if num! <= 1 {
+                num = 1
+                return
+            }
+        }
+        (cell?.viewWithTag(13) as! UILabel).text = String(num!)
+        
+        
+        let indexPath = self.tableView.indexPath(for: cell as! UITableViewCell)
+        currentAction = indexPath
+        self.requestCartAction(.num)
+    }
+    
     func requestCartList(){
         SVProgressHUD.show()
         NetworkModel.request(["user_id":UserModel.share.userId], url: "/Cart/index") { (dic) in
@@ -125,10 +190,56 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.cartDataSource = (dic as! NSDictionary)
                 self.tableView.reloadData()
                 self.nullView.isHidden = true
+                if ((dic as! NSDictionary)["quanxuan"] as! NSNumber).intValue == 1 {
+                    self.allSelectBtn.setImage(UIImage(named: "cart-select"), for: .normal)
+                }else{
+                    self.allSelectBtn.setImage(UIImage(named: "cart-unselect"), for: .normal)
+                }
+                if ((dic as! NSDictionary)["total_price"] as! NSObject).isKind(of: NSNumber.self){
+                    self.totalMoney.text = "￥" + ((dic as! NSDictionary)["total_price"] as! NSNumber).stringValue
+                }else {
+                    self.totalMoney.text = "￥" + ((dic as! NSDictionary)["total_price"] as! String)
+                }
             }else{
                 self.cartDataSource = nil
                 self.tableView.reloadData()
                 self.nullView.isHidden = false
+                SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
+                self.allSelectBtn.setImage(UIImage(named: "cart-unselect"), for: .normal)
+                self.totalMoney.text = "￥0.00"
+            }
+        }
+    }
+    
+    func requestCartAction(_ type: CartActionType){
+        SVProgressHUD.show()
+        var param = ["user_id":UserModel.share.userId,"ac":type.rawValue]
+        if type == .click {
+            let indexPath = currentAction as! IndexPath
+            let dic = (((self.cartDataSource?["list"] as! NSArray)[indexPath.section] as! NSDictionary)["cart"] as! NSArray)[indexPath.row] as! NSDictionary
+            param["cart_id"] = dic["cart_id"] as? String
+            param["brand_id"] = dic["brand_id"] as? String
+        }else if type == .brand {
+            let section = (currentAction as! UIButton).tag
+            let dic = (self.cartDataSource?["list"] as! NSArray)[section] as! NSDictionary
+            param["brand_id"] = dic["brand_id"] as? String
+        }else if type == .all {
+            
+        }else if type == .delete {
+            let indexPath = currentAction as! IndexPath
+            let dic = (((self.cartDataSource?["list"] as! NSArray)[indexPath.section] as! NSDictionary)["cart"] as! NSArray)[indexPath.row] as! NSDictionary
+            param["cart_id"] = dic["cart_id"] as? String
+        }else {
+            let indexPath = currentAction as! IndexPath
+            let cell = self.tableView.cellForRow(at: indexPath)
+            let dic = (((self.cartDataSource?["list"] as! NSArray)[indexPath.section] as! NSDictionary)["cart"] as! NSArray)[indexPath.row] as! NSDictionary
+            param["cart_id"] = dic["cart_id"] as? String
+            param["num"] = (cell?.viewWithTag(13) as! UILabel).text
+        }
+        NetworkModel.request(param as NSDictionary, url: "/Cart/cart_handle") { (dic) in
+            if Int((dic as! NSDictionary)["code"] as! String) == 200 {
+                self.requestCartList()
+            }else{
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }
