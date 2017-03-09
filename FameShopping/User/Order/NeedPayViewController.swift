@@ -19,6 +19,7 @@ class NeedPayViewController: OrderBaseVC {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.requestNeedPay()
+        self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
     }
 
     public class func getInstance() -> NeedPayViewController {
@@ -71,7 +72,7 @@ class NeedPayViewController: OrderBaseVC {
         dealNo.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
         dealNo.text = "订单编号        " + (dic["deal_no"] as! String)
         headerView.addSubview(dealNo)
-        let statusLabel = UILabel(frame: CGRect(x: Helpers.screanSize().width - 50, y: 10, width: 50, height: 35))
+        let statusLabel = UILabel(frame: CGRect(x: Helpers.screanSize().width - 50 - 12, y: 10, width: 50, height: 35))
         headerView.addSubview(statusLabel)
         statusLabel.font = UIFont.systemFont(ofSize: 14)
         statusLabel.textColor = #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1)
@@ -111,7 +112,7 @@ class NeedPayViewController: OrderBaseVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["graphic"] as! String))!)
         (cell.viewWithTag(2) as! UILabel).text = dic["goods_name"] as? String
-        (cell.viewWithTag(3) as! UILabel).text = "￥" + (dic["goods_name"] as! String)
+        (cell.viewWithTag(3) as! UILabel).text = "￥" + (dic["price_num"] as! String)
         (cell.viewWithTag(4) as! UILabel).text = "尺码" + (dic["goods_size"] as! String)
         (cell.viewWithTag(5) as! UILabel).text = "x" + (dic["num"] as! String)
         return cell
