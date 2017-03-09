@@ -36,6 +36,14 @@
 		66A563E11E6D1DD50003B532 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E01E6D1DD50003B532 /* AccountViewController.swift */; };
 		66A563E31E6D346C0003B532 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E21E6D346C0003B532 /* AddressViewController.swift */; };
 		66A563E51E6D3D210003B532 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E41E6D3D210003B532 /* EditAddressViewController.swift */; };
+		66CFC3201E71109800CB859C /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC31F1E71109800CB859C /* PayViewController.swift */; };
+		66CFC3221E7128D700CB859C /* NavBarExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC3211E7128D700CB859C /* NavBarExtend.swift */; };
+		66CFC3251E713C1B00CB859C /* NeedPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC3241E713C1B00CB859C /* NeedPayViewController.swift */; };
+		66CFC3271E713C2E00CB859C /* NeedAcceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC3261E713C2E00CB859C /* NeedAcceptViewController.swift */; };
+		66CFC3291E713C4700CB859C /* RefundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC3281E713C4700CB859C /* RefundViewController.swift */; };
+		66CFC32B1E713C8200CB859C /* NeedEvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */; };
+		66CFC32D1E713C8F00CB859C /* AllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32C1E713C8F00CB859C /* AllOrderViewController.swift */; };
+		66CFC32F1E713CCA00CB859C /* OrderPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32E1E713CCA00CB859C /* OrderPageViewController.swift */; };
 		66E6ED0F1E70EF700009FE9C /* CommitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */; };
 		AF4DDF6E1E6C465C00BAEFDF /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */; };
 		AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */; };
@@ -79,6 +87,14 @@
 		66A563E01E6D1DD50003B532 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		66A563E21E6D346C0003B532 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		66A563E41E6D3D210003B532 /* EditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
+		66CFC31F1E71109800CB859C /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		66CFC3211E7128D700CB859C /* NavBarExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarExtend.swift; sourceTree = "<group>"; };
+		66CFC3241E713C1B00CB859C /* NeedPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedPayViewController.swift; sourceTree = "<group>"; };
+		66CFC3261E713C2E00CB859C /* NeedAcceptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedAcceptViewController.swift; sourceTree = "<group>"; };
+		66CFC3281E713C4700CB859C /* RefundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundViewController.swift; sourceTree = "<group>"; };
+		66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedEvaluateViewController.swift; sourceTree = "<group>"; };
+		66CFC32C1E713C8F00CB859C /* AllOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrderViewController.swift; sourceTree = "<group>"; };
+		66CFC32E1E713CCA00CB859C /* OrderPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPageViewController.swift; sourceTree = "<group>"; };
 		66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitOrderViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+More.swift"; sourceTree = "<group>"; };
@@ -171,6 +187,7 @@
 				662469C01E6918F10001C31F /* NetworkModel.swift */,
 				662469BF1E690FC50001C31F /* FameShopping-Bridging-Header.h */,
 				66A563DA1E694EE00003B532 /* UITextFieldFactory.swift */,
+				66CFC3211E7128D700CB859C /* NavBarExtend.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -216,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				66A563D71E694CE40003B532 /* Login */,
+				66CFC3231E71395F00CB859C /* Order */,
 				66A563D51E69450A0003B532 /* UserViewController.swift */,
 				66A563DC1E6CEF5D0003B532 /* UserInfoViewController.swift */,
 				66A563DE1E6D0BE20003B532 /* SettingViewController.swift */,
@@ -240,10 +258,24 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		66CFC3231E71395F00CB859C /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				66CFC32E1E713CCA00CB859C /* OrderPageViewController.swift */,
+				66CFC32C1E713C8F00CB859C /* AllOrderViewController.swift */,
+				66CFC3241E713C1B00CB859C /* NeedPayViewController.swift */,
+				66CFC3261E713C2E00CB859C /* NeedAcceptViewController.swift */,
+				66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */,
+				66CFC3281E713C4700CB859C /* RefundViewController.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		66E6ED0D1E70EF570009FE9C /* OrderVC */ = {
 			isa = PBXGroup;
 			children = (
 				66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */,
+				66CFC31F1E71109800CB859C /* PayViewController.swift */,
 			);
 			path = OrderVC;
 			sourceTree = "<group>";
@@ -410,16 +442,22 @@
 				AF4DDF6E1E6C465C00BAEFDF /* RegistViewController.swift in Sources */,
 				66A563D61E69450A0003B532 /* UserViewController.swift in Sources */,
 				662469BA1E690F4A0001C31F /* ITRAirSideMenu.m in Sources */,
+				66CFC32D1E713C8F00CB859C /* AllOrderViewController.swift in Sources */,
 				6698DF791E6FC3B90037D646 /* CollectionViewController.swift in Sources */,
 				660501AF1E6E494A00F899FD /* NewPhoneViewController.swift in Sources */,
+				66CFC3251E713C1B00CB859C /* NeedPayViewController.swift in Sources */,
 				6698DF651E6E59FF0037D646 /* AbortViewController.swift in Sources */,
 				66A563DB1E694EE00003B532 /* UITextFieldFactory.swift in Sources */,
+				66CFC32F1E713CCA00CB859C /* OrderPageViewController.swift in Sources */,
+				66CFC3201E71109800CB859C /* PayViewController.swift in Sources */,
 				66A563D31E692B760003B532 /* Helpers.swift in Sources */,
 				660501B11E6E498D00F899FD /* UpdatePhoneViewController.swift in Sources */,
 				66A563DF1E6D0BE20003B532 /* SettingViewController.swift in Sources */,
 				66A563E51E6D3D210003B532 /* EditAddressViewController.swift in Sources */,
+				66CFC3271E713C2E00CB859C /* NeedAcceptViewController.swift in Sources */,
 				662469B31E6902390001C31F /* MainViewController.swift in Sources */,
 				6698DF6C1E6E87AF0037D646 /* GoodViewController.swift in Sources */,
+				66CFC3221E7128D700CB859C /* NavBarExtend.swift in Sources */,
 				6698DF701E6E87D80037D646 /* DetailViewController.swift in Sources */,
 				6698DF6E1E6E87C50037D646 /* EvaluateViewController.swift in Sources */,
 				66A563DD1E6CEF5D0003B532 /* UserInfoViewController.swift in Sources */,
@@ -427,6 +465,8 @@
 				AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */,
 				66A563D91E694D340003B532 /* LoginViewController.swift in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
+				66CFC3291E713C4700CB859C /* RefundViewController.swift in Sources */,
+				66CFC32B1E713C8200CB859C /* NeedEvaluateViewController.swift in Sources */,
 				660501AD1E6E44F100F899FD /* BindingPhoneViewController.swift in Sources */,
 				66E6ED0F1E70EF700009FE9C /* CommitOrderViewController.swift in Sources */,
 				66A563E31E6D346C0003B532 /* AddressViewController.swift in Sources */,
@@ -557,6 +597,7 @@
 			baseConfigurationReference = 64DDB78FCEC7401089CA01B6 /* Pods-FameShopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
 				INFOPLIST_FILE = FameShopping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -573,6 +614,7 @@
 			baseConfigurationReference = FB441D473B5556AAD26B19DE /* Pods-FameShopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = PA5REWWP2Y;
 				INFOPLIST_FILE = FameShopping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

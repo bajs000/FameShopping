@@ -25,6 +25,7 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
     
     var cartDataSource:NSArray?
     var addressDataSource:NSDictionary?
+    var cartDic:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,7 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame:CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 35))
         headerView.backgroundColor = UIColor.white
-        let headerLabel = UILabel(frame: CGRect(x: 38, y: 0, width: Helpers.screanSize().width - 38, height: 35))
+        let headerLabel = UILabel(frame: CGRect(x: 15, y: 0, width: Helpers.screanSize().width - 38, height: 35))
         headerView.addSubview(headerLabel)
         headerLabel.font = UIFont.systemFont(ofSize: 16)
         headerLabel.textColor = UIColor.colorWithHexString(hex: "666666")
@@ -81,6 +82,7 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
         headerLabel.text = dic["brand_name"] as? String
         let line = UIView(frame: CGRect(x: 0, y: 34, width: Helpers.screanSize().width, height: 1))
         line.backgroundColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        headerView.addSubview(line)
         return headerView
     }
     
@@ -114,15 +116,18 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "payPush" {
+            let vc = segue.destination as! PayViewController
+            vc.cartDic = self.cartDic
+            vc.dealNo = (sender as! NSDictionary)["deal_no"] as? String
+        }
     }
-    */
+    
     
     @IBAction func addressBtnDidClick(_ sender: Any) {
         let vc = AddressViewController.getInstance()
@@ -183,6 +188,7 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
                 SVProgressHUD.dismiss()
                 self.cartDataSource = (dic as! NSDictionary)["list"] as? NSArray
                 if (dic as! NSDictionary)["address"] != nil && ((dic as! NSDictionary)["address"] as! NSObject).isKind(of: NSDictionary.self) {
+                    self.cartDic = (dic as! NSDictionary)
                     self.addressDataSource = (dic as! NSDictionary)["address"] as? NSDictionary
                     self.acceptPerson.text = "收件人：" + (((dic as! NSDictionary)["address"] as! NSDictionary)["uname"] as! String)
                     self.phoneNum.text = (((dic as! NSDictionary)["address"] as! NSDictionary)["uphone"] as? NSString)?.replacingCharacters(in: NSMakeRange(3, 4), with: "****")
@@ -203,9 +209,11 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         SVProgressHUD.show()
-        NetworkModel.request(["user_id":UserModel.share.userId,"add_id":self.addressDataSource?["add_id"] as! String,"shsj":self.timeLabel.text!], url: "") { (dic) in
+        NetworkModel.request(["user_id":UserModel.share.userId,"add_id":self.addressDataSource?["add_id"] as! String,"shsj":self.timeLabel.text!], url: "/Order/order_add") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                 SVProgressHUD.dismiss()
+                print(dic)
+                self.performSegue(withIdentifier: "payPush", sender: dic)
             }else{
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }

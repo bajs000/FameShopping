@@ -68,6 +68,11 @@ class UserViewController: UITableViewController {
             }else {
                 (cell.viewWithTag(2) as! UILabel).text = "关于我们"
             }
+        }else {
+            (cell.viewWithTag(1) as! UIButton).addTarget(self, action: #selector(orderStatusBtnDidClick(_:)), for: .touchUpInside)
+            (cell.viewWithTag(2) as! UIButton).addTarget(self, action: #selector(orderStatusBtnDidClick(_:)), for: .touchUpInside)
+            (cell.viewWithTag(3) as! UIButton).addTarget(self, action: #selector(orderStatusBtnDidClick(_:)), for: .touchUpInside)
+            (cell.viewWithTag(4) as! UIButton).addTarget(self, action: #selector(orderStatusBtnDidClick(_:)), for: .touchUpInside)
         }
         return cell
     }
@@ -93,6 +98,10 @@ class UserViewController: UITableViewController {
     }
     */
 
+    func orderStatusBtnDidClick(_ sender: UIButton) -> Void {
+        self.navigationController?.pushViewController(OrderPageViewController.getInstance(), animated: true)
+    }
+    
     @IBAction func avatarBtnDidClick(_ sender: Any) {
         if UserModel.share.userId.characters.count > 0 {
             self.navigationController?.pushViewController(UserInfoViewController.getInstance(), animated: true)
