@@ -12,19 +12,24 @@ class CollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "收藏"
-        let bar = self.navigationController?.navigationBar
-        let navBarHeight = 100.0
-        let rect = CGRect(x: 0.0, y: 20.0, width: Double(Helpers.screanSize().width), height: navBarHeight)
-        bar?.frame = rect
+        self.title = "收藏"
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.shadowImage = #imageLiteral(resourceName: "TransparentPixel")
+        self.navigationController!.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "TransparentPixel"), for: .default)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func test(_ sender: Any) {
+        self.navigationController?.pushViewController(SettingViewController.getInstance(), animated: true)
+    }
 
     /*
     // MARK: - Navigation

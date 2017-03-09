@@ -36,6 +36,7 @@
 		66A563E11E6D1DD50003B532 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E01E6D1DD50003B532 /* AccountViewController.swift */; };
 		66A563E31E6D346C0003B532 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E21E6D346C0003B532 /* AddressViewController.swift */; };
 		66A563E51E6D3D210003B532 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A563E41E6D3D210003B532 /* EditAddressViewController.swift */; };
+		66E6ED0F1E70EF700009FE9C /* CommitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */; };
 		AF4DDF6E1E6C465C00BAEFDF /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */; };
 		AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */; };
 		AF4DDF731E6C52B300BAEFDF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF721E6C52B300BAEFDF /* UserModel.swift */; };
@@ -78,6 +79,7 @@
 		66A563E01E6D1DD50003B532 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		66A563E21E6D346C0003B532 /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		66A563E41E6D3D210003B532 /* EditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
+		66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitOrderViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+More.swift"; sourceTree = "<group>"; };
 		AF4DDF721E6C52B300BAEFDF /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		6698DFA01E6FF0DA0037D646 /* CartViewController */ = {
 			isa = PBXGroup;
 			children = (
+				66E6ED0D1E70EF570009FE9C /* OrderVC */,
 				6698DFA11E6FF0EB0037D646 /* CartViewController.swift */,
 			);
 			path = CartViewController;
@@ -235,6 +238,14 @@
 				AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		66E6ED0D1E70EF570009FE9C /* OrderVC */ = {
+			isa = PBXGroup;
+			children = (
+				66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */,
+			);
+			path = OrderVC;
 			sourceTree = "<group>";
 		};
 		AF4DDF711E6C52B300BAEFDF /* Model */ = {
@@ -417,6 +428,7 @@
 				66A563D91E694D340003B532 /* LoginViewController.swift in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
 				660501AD1E6E44F100F899FD /* BindingPhoneViewController.swift in Sources */,
+				66E6ED0F1E70EF700009FE9C /* CommitOrderViewController.swift in Sources */,
 				66A563E31E6D346C0003B532 /* AddressViewController.swift in Sources */,
 				66A563E11E6D1DD50003B532 /* AccountViewController.swift in Sources */,
 				662469C11E6918F10001C31F /* NetworkModel.swift in Sources */,

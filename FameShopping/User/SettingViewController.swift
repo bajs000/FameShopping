@@ -28,6 +28,7 @@ class SettingViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController!.navigationBar.shadowImage = nil
     }
     
     public class func getInstance() -> SettingViewController{

@@ -15,6 +15,7 @@ class AddressViewController: UITableViewController {
     @IBOutlet var nullView: UIView!
     @IBOutlet weak var addNewBtn: UIButton!
     
+    var completeSelectAddress: ((NSDictionary) -> Void)?
     var addressList:NSArray?
     
     override func viewDidLoad() {
@@ -34,6 +35,12 @@ class AddressViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    public class func getInstance() -> AddressViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "address")
+        return vc as! AddressViewController
     }
     
     // MARK: - Table view data source
@@ -86,7 +93,15 @@ class AddressViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.addressList == nil || (self.addressList?.count)! >= indexPath.section {
-            self.performSegue(withIdentifier: "eidtPush", sender: nil)
+            if self.completeSelectAddress != nil {
+                let dic = self.addressList?[indexPath.section] as! NSDictionary
+                self.completeSelectAddress!(dic)
+                _ = self.navigationController?.popViewController(animated: true)
+            }else {
+                self.performSegue(withIdentifier: "eidtPush", sender: nil)
+            }
+        }else {
+            
         }
     }
 

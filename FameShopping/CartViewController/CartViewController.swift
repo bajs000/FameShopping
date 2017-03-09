@@ -28,6 +28,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var cartDataSource:NSDictionary?
     var currentAction:Any?
+    var allowCommit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +122,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if Int(dic["state"] as! String) == 1 {
             (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "cart-select")
+            allowCommit = true
         }else {
             (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "cart-unselect")
         }
@@ -141,6 +143,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func commitBtnDidClick(_ sender: Any) {
+        if allowCommit {
+            self.performSegue(withIdentifier: "commitPush", sender: nil)
+        }else {
+            SVProgressHUD.showError(withStatus: "请选择购买的商品")
+        }
+    }
     
     @IBAction func selectGoodsBtnDidClick(_ sender: Any) {
         self.tabBarController?.selectedIndex = 0
@@ -182,7 +192,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.requestCartAction(.num)
     }
     
-    func requestCartList(){
+    func requestCartList() {
+        allowCommit = false
         SVProgressHUD.show()
         NetworkModel.request(["user_id":UserModel.share.userId], url: "/Cart/index") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
