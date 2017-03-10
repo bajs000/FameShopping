@@ -88,6 +88,16 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if currentBtnTag == 2 {
+            let dic = dataSource?[indexPath.row] as! NSDictionary
+            print(dic)
+            let vc = GoodPageViewController.getInstance()
+            vc.detailDataSource = dic
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

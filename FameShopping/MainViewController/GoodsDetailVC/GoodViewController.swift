@@ -167,7 +167,13 @@ class GoodViewController: GoodBaseVC, UICollectionViewDelegate, UICollectionView
 
     func requestGood() -> Void {
         SVProgressHUD.show()
-        NetworkModel.request(["goods_id":self.pageViewController?.detailDataSource?["goods_id"] as! String,"user_id":UserModel.share.userId], url: "/Public/goods_details") { (dic) in
+        var param = [String: String]()
+        if self.pageViewController?.detailDataSource?["goods_id"] != nil {
+            param = ["goods_id":self.pageViewController?.detailDataSource?["goods_id"] as! String,"user_id":UserModel.share.userId]
+        }else {
+            param = ["goods_id":self.pageViewController?.detailDataSource?["gbid"] as! String,"user_id":UserModel.share.userId]
+        }
+        NetworkModel.request(param as NSDictionary, url: "/Public/goods_details") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                 SVProgressHUD.dismiss()
                 self.goodInfo = (dic as! NSDictionary)

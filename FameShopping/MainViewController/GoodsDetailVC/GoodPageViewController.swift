@@ -132,6 +132,12 @@ class GoodPageViewController: UIPageViewController, UIPageViewControllerDelegate
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     public class func getInstance() -> GoodPageViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "page")
