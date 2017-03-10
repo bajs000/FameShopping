@@ -16,6 +16,7 @@ enum OrderStatus {
 class OrderDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
     
     var status:OrderStatus = .finish
     var orderInfo:NSDictionary?
@@ -27,6 +28,9 @@ class OrderDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "删除订单", style: .plain, target: self, action: #selector(rightBarItemDidClick(_:)))
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.2549019608, blue: 0.2745098039, alpha: 1)
+        if status == .finish {
+            self.tableView.tableFooterView = nil
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -95,6 +99,7 @@ class OrderDetailViewController: UIViewController, UITableViewDelegate, UITableV
             cell.viewWithTag(5)?.layer.borderWidth = 1
             cell.viewWithTag(5)?.layer.cornerRadius = 4
             (cell.viewWithTag(5) as! UIButton).addTarget(self, action: #selector(evaluateBtnDidClick(_:)), for: .touchUpInside)
+            cell.viewWithTag(5)?.isHidden = (status == .process)
             let dic = (orderInfo!["order_goods"] as! NSArray)[indexPath.row] as! NSDictionary
             (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["graphic"] as! String))!)
             (cell.viewWithTag(2) as! UILabel).text = dic["goods_name"] as? String
@@ -169,6 +174,14 @@ class OrderDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func rightBarItemDidClick(_ sender: UIBarButtonItem) -> Void {
         
+    }
+    
+    @IBAction func payBtnDidClick(_ sender: Any) {
+        let dic = orderInfo
+        let pay = PayViewController.getInstance()
+        pay.cartDic = dic
+        pay.dealNo = dic?["deal_no"] as? String
+        self.navigationController?.pushViewController(pay, animated: true)
     }
 
 }

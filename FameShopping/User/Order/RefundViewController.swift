@@ -14,23 +14,28 @@ import Masonry
 class RefundViewController: OrderBaseVC {
 
     var dataSource:NSArray?
+    @IBOutlet var nullView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "退款订单"
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.requestRefund()
         self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64 - 40)
+        self.tableView.tableFooterView = nullView
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.pageViewController?.navTitleBtnChanged(5)
+        self.requestRefund()
         if alonePush {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64)
+            self.tableView.tableFooterView = nullView
         }
     }
     
@@ -204,7 +209,9 @@ class RefundViewController: OrderBaseVC {
                 SVProgressHUD.dismiss()
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = nil
             }else{
+                self.tableView.tableFooterView = self.nullView
                 self.dataSource = nil
                 self.tableView.reloadData()
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)

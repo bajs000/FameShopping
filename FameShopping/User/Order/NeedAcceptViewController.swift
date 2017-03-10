@@ -12,6 +12,7 @@ import SDWebImage
 
 class NeedAcceptViewController: OrderBaseVC {
     
+    @IBOutlet var nullView: UIView!
     var dataSource:NSArray?
     
     override func viewDidLoad() {
@@ -19,16 +20,20 @@ class NeedAcceptViewController: OrderBaseVC {
         self.title = "待收款订单"
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.requestNeedAccept()
         self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64 - 40)
+        self.tableView.tableFooterView = nullView
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.pageViewController?.navTitleBtnChanged(3)
+        self.requestNeedAccept()
         if alonePush {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64)
+            self.tableView.tableFooterView = nullView
         }
     }
 
@@ -220,9 +225,11 @@ class NeedAcceptViewController: OrderBaseVC {
                 SVProgressHUD.dismiss()
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = nil
             }else{
                 self.dataSource = nil
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = self.nullView
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }

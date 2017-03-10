@@ -13,14 +13,16 @@ import SDWebImage
 class NeedPayViewController: OrderBaseVC {
 
     var dataSource:NSArray?
+    @IBOutlet var nullView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "待付款订单"
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.requestNeedPay()
         self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64 - 40)
+        self.tableView.tableFooterView = nullView
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +31,10 @@ class NeedPayViewController: OrderBaseVC {
         if alonePush {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64)
+            self.tableView.tableFooterView = nullView
         }
+        self.requestNeedPay()
     }
     
     public class func getInstance() -> NeedPayViewController {
@@ -146,6 +151,14 @@ class NeedPayViewController: OrderBaseVC {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dic = self.dataSource![indexPath.section] as! NSDictionary
+        let vc = OrderDetailViewController.getInstance()
+        vc.orderInfo = dic
+        vc.status = .process
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -206,8 +219,10 @@ class NeedPayViewController: OrderBaseVC {
                 SVProgressHUD.dismiss()
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = nil
             }else{
                 self.dataSource = nil
+                self.tableView.tableFooterView = self.nullView
                 self.tableView.reloadData()
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }

@@ -13,19 +13,23 @@ import Masonry
 
 class NeedEvaluateViewController: OrderBaseVC {
     
+    @IBOutlet var nullView: UIView!
+    
     var dataSource:NSArray?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.requestNeedEvaluate()
         self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.nullView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height - 64 - 40)
+        self.tableView.tableFooterView = nullView
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.pageViewController?.navTitleBtnChanged(4)
+        self.requestNeedEvaluate()
     }
 
     public class func getInstance() -> NeedEvaluateViewController {
@@ -202,9 +206,11 @@ class NeedEvaluateViewController: OrderBaseVC {
                 SVProgressHUD.dismiss()
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = nil
             }else{
                 self.dataSource = nil
                 self.tableView.reloadData()
+                self.tableView.tableFooterView = self.nullView
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }
