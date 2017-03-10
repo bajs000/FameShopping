@@ -23,6 +23,7 @@ class EvaluateViewController: GoodBaseVC, UICollectionViewDelegate, UICollection
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.pageViewController?.navTitleBtnChanged(2)
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
     }
     
     public class func getInstance() -> EvaluateViewController {

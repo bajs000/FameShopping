@@ -99,7 +99,21 @@ class UserViewController: UITableViewController {
     */
 
     func orderStatusBtnDidClick(_ sender: UIButton) -> Void {
-        self.navigationController?.pushViewController(OrderPageViewController.getInstance(), animated: true)
+        if sender.tag == 1 {
+            let vc = NeedPayViewController.getInstance()
+            vc.alonePush = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if sender.tag == 2 {
+            let vc = NeedAcceptViewController.getInstance()
+            vc.alonePush = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if sender.tag == 3 {
+            let vc = RefundViewController.getInstance()
+            vc.alonePush = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            self.navigationController?.pushViewController(OrderPageViewController.getInstance(), animated: true)
+        }
     }
     
     @IBAction func avatarBtnDidClick(_ sender: Any) {

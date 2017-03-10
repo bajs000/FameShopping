@@ -13,6 +13,7 @@ import Masonry
 class OrderBaseVC: UITableViewController {
     var pageIndex = 0
     var pageViewController:OrderPageViewController?
+    var alonePush = false
 }
 
 class OrderPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
@@ -63,7 +64,7 @@ class OrderPageViewController: UIPageViewController, UIPageViewControllerDelegat
         self.setPageControl(refund, index: 4)
         VCArr = [all,needPay,needAccept,needEvaluate,refund]
         self.setViewControllers([VCArr[0]], direction: .reverse, animated: true, completion: nil)
-        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
         
         self.view.addSubview(self.headerView)
         self.headerView.mas_makeConstraints { (make) in
@@ -118,12 +119,32 @@ class OrderPageViewController: UIPageViewController, UIPageViewControllerDelegat
     }
     */
     
+    func navTitleBtnChanged(_ tag: Int) -> Void {
+        let sender = self.headerView.viewWithTag(tag) as! UIButton
+        for btn in (sender.superview?.subviews)! {
+            (btn as! UIButton).setTitleColor(UIColor.colorWithHexString(hex: "404146"), for: .normal)
+        }
+        sender.setTitleColor(UIColor.colorWithHexString(hex: "E14575"), for: .normal)
+    }
+    
     @IBAction func orderStatusBtnDidClick(_ sender: UIButton) {
         for i in 1...5 {
             let btn = sender.superview?.viewWithTag(i)
             (btn as! UIButton).setTitleColor(#colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1), for: .normal)
         }
         sender.setTitleColor(#colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), for: .normal)
+        
+        if (self.viewControllers?[0] as! OrderBaseVC).pageIndex > sender.tag - 1 {
+            self.setViewControllers([VCArr[sender.tag - 1]], direction: .reverse, animated: true) { (finish) in
+                
+            }
+        }else {
+            self.setViewControllers([VCArr[sender.tag - 1]], direction: .forward, animated: true, completion: nil)
+        }
+        
+        
+        
+        
     }
 
 }

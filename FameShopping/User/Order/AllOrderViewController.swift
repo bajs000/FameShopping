@@ -20,6 +20,11 @@ class AllOrderViewController: OrderBaseVC {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.pageViewController?.navTitleBtnChanged(1)
+    }
+    
     public class func getInstance() -> AllOrderViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "all")

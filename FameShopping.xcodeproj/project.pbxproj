@@ -44,6 +44,10 @@
 		66CFC32B1E713C8200CB859C /* NeedEvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */; };
 		66CFC32D1E713C8F00CB859C /* AllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32C1E713C8F00CB859C /* AllOrderViewController.swift */; };
 		66CFC32F1E713CCA00CB859C /* OrderPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC32E1E713CCA00CB859C /* OrderPageViewController.swift */; };
+		66CFC3311E72413800CB859C /* RefundDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFC3301E72413800CB859C /* RefundDetailViewController.swift */; };
+		66D147241E728E47005C7548 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D147231E728E47005C7548 /* OrderDetailViewController.swift */; };
+		66D147281E7295F5005C7548 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D147271E7295F5005C7548 /* TQStarRatingView.m */; };
+		66D1472A1E729A9D005C7548 /* GoodsEvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D147291E729A9D005C7548 /* GoodsEvaluateViewController.swift */; };
 		66E6ED0F1E70EF700009FE9C /* CommitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */; };
 		AF4DDF6E1E6C465C00BAEFDF /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */; };
 		AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */; };
@@ -95,6 +99,11 @@
 		66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedEvaluateViewController.swift; sourceTree = "<group>"; };
 		66CFC32C1E713C8F00CB859C /* AllOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrderViewController.swift; sourceTree = "<group>"; };
 		66CFC32E1E713CCA00CB859C /* OrderPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPageViewController.swift; sourceTree = "<group>"; };
+		66CFC3301E72413800CB859C /* RefundDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundDetailViewController.swift; sourceTree = "<group>"; };
+		66D147231E728E47005C7548 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		66D147261E7295F5005C7548 /* TQStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQStarRatingView.h; sourceTree = "<group>"; };
+		66D147271E7295F5005C7548 /* TQStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQStarRatingView.m; sourceTree = "<group>"; };
+		66D147291E729A9D005C7548 /* GoodsEvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsEvaluateViewController.swift; sourceTree = "<group>"; };
 		66E6ED0E1E70EF700009FE9C /* CommitOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitOrderViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6D1E6C465C00BAEFDF /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		AF4DDF6F1E6C478800BAEFDF /* UIColor+More.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+More.swift"; sourceTree = "<group>"; };
@@ -267,8 +276,20 @@
 				66CFC3261E713C2E00CB859C /* NeedAcceptViewController.swift */,
 				66CFC32A1E713C8200CB859C /* NeedEvaluateViewController.swift */,
 				66CFC3281E713C4700CB859C /* RefundViewController.swift */,
+				66CFC3301E72413800CB859C /* RefundDetailViewController.swift */,
+				66D147231E728E47005C7548 /* OrderDetailViewController.swift */,
+				66D147291E729A9D005C7548 /* GoodsEvaluateViewController.swift */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		66D147251E7295F5005C7548 /* TQStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				66D147261E7295F5005C7548 /* TQStarRatingView.h */,
+				66D147271E7295F5005C7548 /* TQStarRatingView.m */,
+			);
+			path = TQStarRating;
 			sourceTree = "<group>";
 		};
 		66E6ED0D1E70EF570009FE9C /* OrderVC */ = {
@@ -291,6 +312,7 @@
 		AF5FD72F1E68FC70003A2343 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				66D147251E7295F5005C7548 /* TQStarRating */,
 				6698DF711E6E94FE0037D646 /* YRCoverFlowLayout */,
 				662469B71E690F4A0001C31F /* DrawerViewController */,
 			);
@@ -446,6 +468,8 @@
 				6698DF791E6FC3B90037D646 /* CollectionViewController.swift in Sources */,
 				660501AF1E6E494A00F899FD /* NewPhoneViewController.swift in Sources */,
 				66CFC3251E713C1B00CB859C /* NeedPayViewController.swift in Sources */,
+				66D147241E728E47005C7548 /* OrderDetailViewController.swift in Sources */,
+				66CFC3311E72413800CB859C /* RefundDetailViewController.swift in Sources */,
 				6698DF651E6E59FF0037D646 /* AbortViewController.swift in Sources */,
 				66A563DB1E694EE00003B532 /* UITextFieldFactory.swift in Sources */,
 				66CFC32F1E713CCA00CB859C /* OrderPageViewController.swift in Sources */,
@@ -464,7 +488,9 @@
 				6698DF741E6E95190037D646 /* YRCoverFlowLayout.m in Sources */,
 				AF4DDF701E6C478800BAEFDF /* UIColor+More.swift in Sources */,
 				66A563D91E694D340003B532 /* LoginViewController.swift in Sources */,
+				66D147281E7295F5005C7548 /* TQStarRatingView.m in Sources */,
 				662469A01E68EBB60001C31F /* AppDelegate.swift in Sources */,
+				66D1472A1E729A9D005C7548 /* GoodsEvaluateViewController.swift in Sources */,
 				66CFC3291E713C4700CB859C /* RefundViewController.swift in Sources */,
 				66CFC32B1E713C8200CB859C /* NeedEvaluateViewController.swift in Sources */,
 				660501AD1E6E44F100F899FD /* BindingPhoneViewController.swift in Sources */,

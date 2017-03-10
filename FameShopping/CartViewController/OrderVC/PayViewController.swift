@@ -21,10 +21,20 @@ class PayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "支付订单"
-        self.totalMoney.text = "￥" + (self.cartDic?["total_price"] as! NSNumber).stringValue
+        if (self.cartDic?["total_price"] as! NSObject).isKind(of: NSString.self){
+            self.totalMoney.text = "￥" + (self.cartDic?["total_price"] as! String)
+        }else if (self.cartDic?["total_price"] as! NSObject).isKind(of: NSNumber.self) {
+            self.totalMoney.text = "￥" + (self.cartDic?["total_price"] as! NSNumber).stringValue
+        }
         // Do any additional setup after loading the view.
     }
 
+    public class func getInstance() -> PayViewController{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "pay")
+        return vc as! PayViewController
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,7 +75,11 @@ class PayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath)
         if indexPath.section == 0 {
-            (cell.viewWithTag(1) as! UILabel).text = "￥" + (self.cartDic?["total_price"] as! NSNumber).stringValue
+            if (self.cartDic?["total_price"] as! NSObject).isKind(of: NSString.self){
+                (cell.viewWithTag(1) as! UILabel).text = "￥" + (self.cartDic?["total_price"] as! String)
+            }else if (self.cartDic?["total_price"] as! NSObject).isKind(of: NSNumber.self) {
+                (cell.viewWithTag(1) as! UILabel).text = "￥" + (self.cartDic?["total_price"] as! NSNumber).stringValue
+            }
         }else{
             if indexPath.row == 0 {
                 

@@ -16,12 +16,22 @@ class NeedPayViewController: OrderBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "待付款订单"
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.requestNeedPay()
         self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.pageViewController?.navTitleBtnChanged(2)
+        if alonePush {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+    }
+    
     public class func getInstance() -> NeedPayViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "needPay")
@@ -64,20 +74,34 @@ class NeedPayViewController: OrderBaseVC {
         let dic = self.dataSource![section] as! NSDictionary
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 45))
         headerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         let spaceView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 10))
         spaceView.backgroundColor = UIColor.colorWithHexString(hex: "F0F0F0")
         headerView.addSubview(spaceView)
+        
         let dealNo = UILabel(frame: CGRect(x: 12, y: 10, width: Helpers.screanSize().width - 50, height: 35))
         dealNo.font = UIFont.systemFont(ofSize: 14)
         dealNo.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
         dealNo.text = "订单编号        " + (dic["deal_no"] as! String)
         headerView.addSubview(dealNo)
+        
         let statusLabel = UILabel(frame: CGRect(x: Helpers.screanSize().width - 50 - 12, y: 10, width: 50, height: 35))
         headerView.addSubview(statusLabel)
         statusLabel.font = UIFont.systemFont(ofSize: 14)
         statusLabel.textColor = #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1)
         statusLabel.text = "待付款"
         statusLabel.textAlignment = .right
+        
+        let line = UIView(frame: .zero)
+        line.backgroundColor = UIColor.colorWithHexString(hex: "C9C9C9")
+        headerView.addSubview(line)
+        line.mas_makeConstraints { (make) in
+            _ = make?.left.equalTo()(headerView.mas_left)?.with().offset()(12)
+            _ = make?.bottom.equalTo()(headerView.mas_bottom)
+            _ = make?.right.equalTo()(headerView.mas_right)
+            _ = make?.height.equalTo()(0.5)
+        }
+        
         return headerView
     }
     
@@ -85,6 +109,7 @@ class NeedPayViewController: OrderBaseVC {
         let dic = self.dataSource![section] as! NSDictionary
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 65))
         footerView.backgroundColor = UIColor.white
+        
         let moneyLabel = UILabel(frame :CGRect(x: 12, y: 0, width: Helpers.screanSize().width - 24, height: 32))
         footerView.addSubview(moneyLabel)
         moneyLabel.font = UIFont.systemFont(ofSize: 14)
@@ -92,8 +117,9 @@ class NeedPayViewController: OrderBaseVC {
         moneyLabel.textAlignment = .right
         moneyLabel.text = "合计：￥" + (dic["total_price"] as! String)
         let tempStr = NSMutableAttributedString(string: moneyLabel.text!)
-        tempStr.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), range: NSMakeRange(4, (dic["total_price"] as! String).characters.count))
+        tempStr.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), range: NSMakeRange(3, (dic["total_price"] as! String).characters.count + 1))
         moneyLabel.attributedText = tempStr
+        
         let payBtn = UIButton(type: .custom)
         footerView.addSubview(payBtn)
         payBtn.frame = CGRect(x: Helpers.screanSize().width - 75 - 12 , y: 32, width: 75, height: 25)
@@ -103,6 +129,8 @@ class NeedPayViewController: OrderBaseVC {
         payBtn.setTitleColor(#colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), for: .normal)
         payBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         payBtn.setTitle("去付款", for: .normal)
+        payBtn.tag = section
+        payBtn.addTarget(self, action: #selector(payBtnDidClick(_:)), for: .touchUpInside)
         
         return footerView
     }
@@ -113,7 +141,7 @@ class NeedPayViewController: OrderBaseVC {
         (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["graphic"] as! String))!)
         (cell.viewWithTag(2) as! UILabel).text = dic["goods_name"] as? String
         (cell.viewWithTag(3) as! UILabel).text = "￥" + (dic["price_num"] as! String)
-        (cell.viewWithTag(4) as! UILabel).text = "尺码" + (dic["goods_size"] as! String)
+        (cell.viewWithTag(4) as! UILabel).text = "尺码：" + (dic["goods_size"] as! String)
         (cell.viewWithTag(5) as! UILabel).text = "x" + (dic["num"] as! String)
         return cell
     }
@@ -163,6 +191,14 @@ class NeedPayViewController: OrderBaseVC {
     }
     */
     
+    func payBtnDidClick(_ sender: UIButton) -> Void {
+        let dic = self.dataSource![sender.tag] as! NSDictionary
+        let pay = PayViewController.getInstance()
+        pay.cartDic = dic
+        pay.dealNo = dic["deal_no"] as? String
+        self.navigationController?.pushViewController(pay, animated: true)
+    }
+    
     func requestNeedPay() -> Void {
         SVProgressHUD.show()
         NetworkModel.request(["user_id":UserModel.share.userId,"status":"0"], url: "/Order/order_list") { (dic) in
@@ -171,9 +207,12 @@ class NeedPayViewController: OrderBaseVC {
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.tableView.reloadData()
             }else{
+                self.dataSource = nil
+                self.tableView.reloadData()
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }
     }
+    
 
 }
