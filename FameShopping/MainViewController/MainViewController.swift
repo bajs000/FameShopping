@@ -238,13 +238,27 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
             self.navigationController?.pushViewController(vc, animated: true)
         }else if collectionView == self.typeCollectionView {
             let dic = self.typeDataSource?[indexPath.row] as! NSDictionary
-            if indexPath.row == 1 {
+            if indexPath.row == 1 || indexPath.row == 4 {
                 let vc = MenViewController.getInstance()
                 vc.menInfo = dic
+                if indexPath.row == 1 {
+                    vc.type = .men
+                }else if indexPath.row == 4 {
+                    vc.type = .baby
+                }
                 self.navigationController?.pushViewController(vc, animated: true)
             }else {
                 let vc = GoodClassViewController.getInstance()
                 vc.typeInfo = dic
+                if indexPath.row == 0 {
+                    vc.type = .girl
+                }else if indexPath.row == 2 {
+                    vc.type = .cosmetics
+                }else if indexPath.row == 3 {
+                    vc.type = .bag
+                }else if indexPath.row == 6 {
+                    vc.type = .brand
+                }
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

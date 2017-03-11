@@ -427,6 +427,37 @@
                                                         <constraint firstItem="Yle-6h-akF" firstAttribute="centerX" secondItem="TFG-m1-FZZ" secondAttribute="centerX" id="xy4-6p-TyN"/>
                                                     </constraints>
                                                 </collectionViewCell>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bagCell" id="pG9-Lm-o6V">
+                                                    <rect key="frame" x="95" y="0.0" width="90" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y8w-JJ-NrJ">
+                                                                <rect key="frame" x="15" y="12" width="60" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="y8w-JJ-NrJ" secondAttribute="height" id="H5i-pc-PtL"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7O-6W-hbd">
+                                                                <rect key="frame" x="8" y="76" width="74" height="16"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <color key="textColor" red="0.25098039220000001" green="0.25490196079999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="e7O-6W-hbd" secondAttribute="trailing" constant="8" id="5dR-Wp-4qw"/>
+                                                        <constraint firstItem="e7O-6W-hbd" firstAttribute="leading" secondItem="pG9-Lm-o6V" secondAttribute="leading" constant="8" id="926-Lk-fwC"/>
+                                                        <constraint firstItem="e7O-6W-hbd" firstAttribute="top" secondItem="y8w-JJ-NrJ" secondAttribute="bottom" constant="4" id="AiI-wl-Stu"/>
+                                                        <constraint firstItem="y8w-JJ-NrJ" firstAttribute="width" secondItem="pG9-Lm-o6V" secondAttribute="width" multiplier="6:9" id="QWg-Cd-8Pd"/>
+                                                        <constraint firstItem="y8w-JJ-NrJ" firstAttribute="top" secondItem="pG9-Lm-o6V" secondAttribute="top" constant="12" id="TFm-Y6-UZh"/>
+                                                        <constraint firstItem="e7O-6W-hbd" firstAttribute="centerX" secondItem="pG9-Lm-o6V" secondAttribute="centerX" id="iLb-SV-v8f"/>
+                                                        <constraint firstItem="y8w-JJ-NrJ" firstAttribute="centerX" secondItem="pG9-Lm-o6V" secondAttribute="centerX" id="yhd-9l-4xT"/>
+                                                    </constraints>
+                                                </collectionViewCell>
                                             </cells>
                                         </collectionView>
                                     </subviews>

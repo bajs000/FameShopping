@@ -21,6 +21,8 @@ class MenViewController: UITableViewController, UICollectionViewDelegateFlowLayo
     
     var collectionView:UICollectionView?
     
+    var type:GoodClassType = .men
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestMen()
@@ -41,21 +43,38 @@ class MenViewController: UITableViewController, UICollectionViewDelegateFlowLayo
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if type == .men {
+            return 3
+        }else if type == .baby {
+            return 2
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            if self.adImageDataSource == nil {
-                return 0
+        if type == .men {
+            if section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }
+                return (self.adImageDataSource?.count)!
             }
-            return (self.adImageDataSource?.count)!
-        }
-        if section == 1 {
-            return 1
-        }
-        if  section == 2 {
-            return self.imgDataSource.count
+            if section == 1 {
+                return 1
+            }
+            if  section == 2 {
+                return self.imgDataSource.count
+            }
+        }else if type == .baby {
+            if section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }
+                return (self.adImageDataSource?.count)!
+            }
+            if section == 1 {
+                return self.imgDataSource.count
+            }
         }
         return 0
     }
@@ -69,36 +88,55 @@ class MenViewController: UITableViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            if self.adImageDataSource == nil {
-                return 0
-            }else {
-                return 162
-            }
-        }
-        if indexPath.section == 1 {
-            if self.typeDataSource == nil {
-                return 0
-            }else {
-                let width = Helpers.screanSize().width / 2
-                let height = width
-                let count = (self.typeDataSource?.count)! / 2
-                let lastCount = (self.typeDataSource?.count)! % 2
-                if lastCount != 0 {
-                    return CGFloat(count + 1) * height
-                }else{
-                    return CGFloat(count) * height
+        if type == .men {
+            if indexPath.section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }else {
+                    return 162
                 }
             }
+            if indexPath.section == 1 {
+                if self.typeDataSource == nil {
+                    return 0
+                }else {
+                    let width = Helpers.screanSize().width / 2
+                    let height = width
+                    let count = (self.typeDataSource?.count)! / 2
+                    let lastCount = (self.typeDataSource?.count)! % 2
+                    if lastCount != 0 {
+                        return CGFloat(count + 1) * height
+                    }else{
+                        return CGFloat(count) * height
+                    }
+                }
+            }
+            if indexPath.section == 2 {
+                return  162
+            }
+        }else if type == .baby {
+            if indexPath.section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }else {
+                    return 162
+                }
+            }
+            if indexPath.section == 1 {
+                return  162
+            }
         }
-        if indexPath.section == 2 {
-            return  162
-        }
+        
         return 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
+            if type == .baby {
+            
+            }else if type == .men {
+                
+            }
             return self.headerView
         }
         return nil
@@ -107,32 +145,55 @@ class MenViewController: UITableViewController, UICollectionViewDelegateFlowLayo
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellIdentify = "imgCell"
-        if indexPath.section == 1 {
-            cellIdentify = "typeCell"
-        }else {
+        if type == .baby {
             cellIdentify = "imgCell"
+        }else if type == .men {
+            if indexPath.section == 1 {
+                cellIdentify = "typeCell"
+            }else {
+                cellIdentify = "imgCell"
+            }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath)
-        if indexPath.section == 0 {
-            let dic = self.adImageDataSource?[indexPath.row] as! NSDictionary
-            (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["bigpic"] as! String)))
-        }else if indexPath.section == 1 {
-            self.collectionView = (cell.viewWithTag(1) as! UICollectionView)
-            self.collectionView?.delegate = self
-            self.collectionView?.dataSource = self
-        }else {
-            let dic = self.imgDataSource[indexPath.row] as! NSDictionary
-            (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
+        if type == .baby {
+            if indexPath.section == 0 {
+                let dic = self.adImageDataSource?[indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["bigpic"] as! String)))
+            }else if indexPath.section == 1 {
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
+            }
+        }else if type == .men {
+            if indexPath.section == 0 {
+                let dic = self.adImageDataSource?[indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["bigpic"] as! String)))
+            }else if indexPath.section == 1 {
+                self.collectionView = (cell.viewWithTag(1) as! UICollectionView)
+                self.collectionView?.delegate = self
+                self.collectionView?.dataSource = self
+            }else {
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
+            }
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
-            let vc = BrandViewController.getInstance()
-            let dic = self.imgDataSource[indexPath.row] as! NSDictionary
-            vc.brandInfo = dic
-            self.navigationController?.pushViewController(vc, animated: true)
+        if type == .baby {
+            if indexPath.section == 1 {
+                let vc = BrandViewController.getInstance()
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                vc.brandInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }else if type == .men {
+            if indexPath.section == 2 {
+                let vc = BrandViewController.getInstance()
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                vc.brandInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     

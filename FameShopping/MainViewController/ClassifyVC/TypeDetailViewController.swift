@@ -98,24 +98,10 @@ class TypeDetailViewController: UICollectionViewController, UICollectionViewDele
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            switch indexPath.row {
-            case 0:
-                let dic = self.dataSource?[indexPath.row] as! NSDictionary
-                let vc = GoodPageViewController.getInstance()
-                vc.detailDataSource = dic
-                self.navigationController?.pushViewController(vc, animated: true)
-                break
-            case 1:
-                break
-            case 2:
-                break
-            case 3:
-                break
-            case 4:
-                break
-            default:
-                break
-            }
+            let dic = self.dataSource?[indexPath.row] as! NSDictionary
+            let vc = GoodPageViewController.getInstance()
+            vc.detailDataSource = dic
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
