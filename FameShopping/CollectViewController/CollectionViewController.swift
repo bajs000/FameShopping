@@ -95,6 +95,11 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
             let vc = GoodPageViewController.getInstance()
             vc.detailDataSource = dic
             self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let vc = BrandViewController.getInstance()
+            let dic = self.dataSource?[indexPath.row] as! NSDictionary
+            vc.brandInfo = dic
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -140,6 +145,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.dataSource = (dic as! NSDictionary)["list"] as? NSArray
                 self.collection.reloadData()
             }else{
+                self.dataSource = nil
+                self.collection.reloadData()
                 SVProgressHUD.showError(withStatus: (dic as! NSDictionary)["msg"] as! String)
             }
         }

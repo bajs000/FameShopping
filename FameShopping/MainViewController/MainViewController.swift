@@ -102,7 +102,7 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
                 return 0
             }else {
                 let count = (self.typeDataSource?.count)! / 4
-                let lastCount = count % 4
+                let lastCount = (self.typeDataSource?.count)! % 4
                 if lastCount != 0 {
                     return CGFloat(count + 1) * 90
                 }else{
@@ -160,6 +160,15 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
             (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            let vc = BrandViewController.getInstance()
+            let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+            vc.brandInfo = dic
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // MARK: - Collection view data source
@@ -227,6 +236,17 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
             let vc = GoodPageViewController.getInstance()
             vc.detailDataSource = dic
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if collectionView == self.typeCollectionView {
+            let dic = self.typeDataSource?[indexPath.row] as! NSDictionary
+            if indexPath.row == 1 {
+                let vc = MenViewController.getInstance()
+                vc.menInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                let vc = GoodClassViewController.getInstance()
+                vc.typeInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     
@@ -265,15 +285,14 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+    
     func item(_ tabItem: UITabBarItem, title: String, normalImg: String, selectImg: String) -> Void {
         let normalImage = UIImage(named: normalImg)?.withRenderingMode(.alwaysOriginal)
         let selectImage = UIImage(named: selectImg)?.withRenderingMode(.alwaysOriginal)

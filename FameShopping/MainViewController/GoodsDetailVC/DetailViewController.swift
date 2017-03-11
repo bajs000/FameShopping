@@ -19,6 +19,7 @@ class DetailViewController: GoodBaseVC {
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.webView.scrollView.isScrollEnabled = false
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         if self.pageViewController?.goodInfo != nil {
             let html = (self.pageViewController?.goodInfo?["list"] as! NSDictionary)["details"] as? String
             self.webView.loadHTMLString(html!, baseURL: nil)

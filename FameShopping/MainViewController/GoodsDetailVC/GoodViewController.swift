@@ -31,6 +31,7 @@ class GoodViewController: GoodBaseVC, UICollectionViewDelegate, UICollectionView
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.webView.scrollView.isScrollEnabled = false
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         self.requestGood()
     }
 
