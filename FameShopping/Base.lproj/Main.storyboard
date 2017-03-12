@@ -120,7 +120,7 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ehH-Wu-7Et">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="pqm-w3-K84">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pqm-w3-K84">
                                                 <size key="itemSize" width="90" height="90"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -179,7 +179,7 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NLP-jx-OEl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="10" id="Cbx-ao-WY7">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cbx-ao-WY7">
                                                 <size key="itemSize" width="171" height="265"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -6139,16 +6139,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="access" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-Oh-yn9">
-                                            <rect key="frame" x="265" y="15" width="10" height="18"/>
+                                            <rect key="frame" x="216.5" y="15" width="10" height="18"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="uO0-4f-bw8" firstAttribute="centerY" secondItem="oYI-Yr-xld" secondAttribute="centerY" id="FsE-h4-rB9"/>
                                         <constraint firstItem="3Ib-Oh-yn9" firstAttribute="centerY" secondItem="oYI-Yr-xld" secondAttribute="centerY" id="ORI-nK-H2v"/>
                                         <constraint firstItem="uO0-4f-bw8" firstAttribute="leading" secondItem="JpQ-rs-mR6" secondAttribute="trailing" constant="8" id="Pkk-C1-nYk"/>
-                                        <constraint firstAttribute="trailing" secondItem="3Ib-Oh-yn9" secondAttribute="trailing" constant="100" id="QoL-GB-GwV"/>
                                         <constraint firstAttribute="bottom" secondItem="JpQ-rs-mR6" secondAttribute="bottom" id="VzH-1a-k1T"/>
                                         <constraint firstItem="JpQ-rs-mR6" firstAttribute="top" secondItem="oYI-Yr-xld" secondAttribute="top" id="ZyR-aq-rj2"/>
+                                        <constraint firstItem="3Ib-Oh-yn9" firstAttribute="centerX" secondItem="oYI-Yr-xld" secondAttribute="centerX" multiplier="301:255" id="jdI-vL-bw4"/>
                                         <constraint firstItem="JpQ-rs-mR6" firstAttribute="leading" secondItem="oYI-Yr-xld" secondAttribute="leading" constant="8" id="wwD-Rg-p5v"/>
                                     </constraints>
                                 </tableViewCellContentView>

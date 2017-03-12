@@ -43,11 +43,11 @@ class MenuViewController: UITableViewController {
         return titleArr.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "menu-icon-" + String(indexPath.row))
         (cell.viewWithTag(2) as! UILabel).text = self.titleArr[indexPath.row]
+        (cell.viewWithTag(3) as! UIImageView).image = Helpers.image(#imageLiteral(resourceName: "access"), with: #colorLiteral(red: 0.5098039216, green: 0.5098039216, blue: 0.5098039216, alpha: 1))
         return cell
     }
     
