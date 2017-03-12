@@ -78,12 +78,14 @@ class UserViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
-            self.navigationController?.pushViewController(SettingViewController.getInstance(), animated: true)
-        }else if indexPath.row == 2 {
-            self.navigationController?.pushViewController(AccountViewController.getInstance(), animated: true)
-        }else if indexPath.row == 3 {
-            self.performSegue(withIdentifier: "abortPush", sender: nil)
+        if UserModel.checkUserLogin(at: self){
+            if indexPath.row == 1 {
+                self.navigationController?.pushViewController(SettingViewController.getInstance(), animated: true)
+            }else if indexPath.row == 2 {
+                self.navigationController?.pushViewController(AccountViewController.getInstance(), animated: true)
+            }else if indexPath.row == 3 {
+                self.performSegue(withIdentifier: "abortPush", sender: nil)
+            }
         }
     }
     
@@ -99,20 +101,22 @@ class UserViewController: UITableViewController {
     */
 
     func orderStatusBtnDidClick(_ sender: UIButton) -> Void {
-        if sender.tag == 1 {
-            let vc = NeedPayViewController.getInstance()
-            vc.alonePush = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if sender.tag == 2 {
-            let vc = NeedAcceptViewController.getInstance()
-            vc.alonePush = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if sender.tag == 3 {
-            let vc = RefundViewController.getInstance()
-            vc.alonePush = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else {
-            self.navigationController?.pushViewController(OrderPageViewController.getInstance(), animated: true)
+        if UserModel.checkUserLogin(at: self){
+            if sender.tag == 1 {
+                let vc = NeedPayViewController.getInstance()
+                vc.alonePush = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else if sender.tag == 2 {
+                let vc = NeedAcceptViewController.getInstance()
+                vc.alonePush = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else if sender.tag == 3 {
+                let vc = RefundViewController.getInstance()
+                vc.alonePush = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else {
+                self.navigationController?.pushViewController(OrderPageViewController.getInstance(), animated: true)
+            }
         }
     }
     

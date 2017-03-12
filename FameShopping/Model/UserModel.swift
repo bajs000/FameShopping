@@ -12,6 +12,14 @@ class UserModel: NSObject {
 
     static let share = UserModel()
     
+    public class func checkUserLogin(at viewController: UIViewController) -> Bool {
+        if UserModel.share.userId.characters.count == 0 {
+            viewController.navigationController?.pushViewController(LoginViewController.getInstance(), animated: true)
+            return false
+        }
+        return true
+    }
+    
     private var _address:String?
     var address:String {
         get{

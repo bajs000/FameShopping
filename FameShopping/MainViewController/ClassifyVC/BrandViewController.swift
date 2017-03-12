@@ -150,7 +150,9 @@ class BrandViewController: UICollectionViewController, UICollectionViewDelegateF
     */
     
     @IBAction func brandLikeDidClick(_ sender: Any) {
-        self.requestCollection()
+        if UserModel.checkUserLogin(at: self){
+            self.requestCollection()
+        }
     }
     
     func requestBrandList() -> Void {

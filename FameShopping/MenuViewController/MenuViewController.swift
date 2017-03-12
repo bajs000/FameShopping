@@ -48,7 +48,7 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        (UIApplication.shared.delegate as! AppDelegate).hideLeftMenu(indexPath)
     }
 
     /*

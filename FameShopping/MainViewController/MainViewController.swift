@@ -238,7 +238,7 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
             self.navigationController?.pushViewController(vc, animated: true)
         }else if collectionView == self.typeCollectionView {
             let dic = self.typeDataSource?[indexPath.row] as! NSDictionary
-            if indexPath.row == 1 || indexPath.row == 4 {
+            if indexPath.row == 1 {
                 let vc = MenViewController.getInstance()
                 vc.menInfo = dic
                 if indexPath.row == 1 {
@@ -256,8 +256,12 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
                     vc.type = .cosmetics
                 }else if indexPath.row == 3 {
                     vc.type = .bag
+                }else if indexPath.row == 4 {
+                    vc.type = .baby
                 }else if indexPath.row == 6 {
                     vc.type = .brand
+                }else if indexPath.row == 5 {
+                    vc.type = .digit
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -305,6 +309,37 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+    }
+    
+    func menuTableDidSelect(_ indexPath: IndexPath) {
+        let dic = self.typeDataSource?[indexPath.row] as! NSDictionary
+        if indexPath.row == 1 {
+            let vc = MenViewController.getInstance()
+            vc.menInfo = dic
+            if indexPath.row == 1 {
+                vc.type = .men
+            }else if indexPath.row == 4 {
+                vc.type = .baby
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let vc = GoodClassViewController.getInstance()
+            vc.typeInfo = dic
+            if indexPath.row == 0 {
+                vc.type = .girl
+            }else if indexPath.row == 2 {
+                vc.type = .cosmetics
+            }else if indexPath.row == 3 {
+                vc.type = .bag
+            }else if indexPath.row == 4 {
+                vc.type = .baby
+            }else if indexPath.row == 6 {
+                vc.type = .brand
+            }else if indexPath.row == 5 {
+                vc.type = .digit
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func item(_ tabItem: UITabBarItem, title: String, normalImg: String, selectImg: String) -> Void {

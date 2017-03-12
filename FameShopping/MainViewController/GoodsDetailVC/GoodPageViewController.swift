@@ -274,15 +274,19 @@ class GoodPageViewController: UIPageViewController, UIPageViewControllerDelegate
     
     @IBAction func finishChoseSizeBtnDidClick(_ sender: Any) {
         if currentSizeBtn != nil {
-            self.hideBuyDetailView()
-            self.requestAddCart()
+            if UserModel.checkUserLogin(at: self){
+                self.hideBuyDetailView()
+                self.requestAddCart()
+            }
         }else {
             SVProgressHUD.showError(withStatus: "请选择型号")
         }
     }
     
     @IBAction func collectionItemDidClick(_ sender: UIBarButtonItem) {
-        self.requestCollection()
+        if UserModel.checkUserLogin(at: self){
+            self.requestCollection()
+        }
     }
     
     @IBAction func shareItemDidClick(_ sender: Any) {

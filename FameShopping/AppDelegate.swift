@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showLeftMenu() {
         drawer?.presentLeftMenuViewController()
     }
+    
+    func hideLeftMenu(_ indexPath: IndexPath) -> Void {
+        drawer?.hideViewController()
+        let tabbar = drawer?.contentViewController as! UITabBarController
+        ((tabbar.selectedViewController as! UINavigationController).topViewController as! MainViewController).menuTableDidSelect(indexPath)
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -17,6 +17,7 @@ enum GoodClassType {
     case men
     case baby
     case brand
+    case digit
 }
 
 class GoodClassViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -55,7 +56,7 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .digit  || type == .baby {
             return 3
         }else if type == .cosmetics{
             return 4
@@ -66,7 +67,7 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag  || type == .baby {
             if section == 0 {
                 return 1
             }
@@ -102,12 +103,25 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
             if  section == 3 {
                 return self.imgDataSource.count
             }
+        }else if  type == .digit {
+            if section == 0 {
+                return 1
+            }
+            if section == 1 {
+                if self.typeDataSource != nil {
+                    return (self.typeDataSource?.count)!
+                }
+                return 0
+            }
+            if  section == 2 {
+                return self.imgDataSource.count
+            }
         }
         return 0
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .digit || type == .baby {
             if section == 0 || section == 1 {
                 return 0
             }else {
@@ -129,12 +143,16 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
             }
         }else if type == .cosmetics {
             return 0
+        }else if type == .digit {
+            if section == 0 || section == 1 || type == .baby {
+                return 10
+            }
         }
         return 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .digit || type == .baby {
             if section == 0 || section == 1 {
                 return nil
             }else if section == 2 {
@@ -250,6 +268,45 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
                 let width = Helpers.screanSize().width
                 return  150 * width / 375 + 47
             }
+        }else if type == .digit {
+            if indexPath.section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }else {
+                    return 152
+                }
+            }
+            if indexPath.section == 1 {
+                if self.typeDataSource == nil {
+                    return 0
+                }else {
+                    return 125
+                }
+            }
+            if indexPath.section == 2 {
+                let width = Helpers.screanSize().width
+                return  150 * width / 375 + 47
+            }
+        }else if type == .baby {
+            if indexPath.section == 0 {
+                if self.adImageDataSource == nil {
+                    return 0
+                }else {
+                    return 152
+                }
+            }
+            if indexPath.section == 1 {
+                if self.typeDataSource == nil {
+                    return 0
+                }else {
+                    let width = Helpers.screanSize().width
+                    return  200 * width / 375
+                }
+            }
+            if indexPath.section == 2 {
+                let width = Helpers.screanSize().width
+                return  150 * width / 375 + 47
+            }
         }
         
         return 0
@@ -275,17 +332,38 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
             }else {
                 cellIdentify = "imgCell"
             }
+        }else if type == .digit {
+            if indexPath.section == 0 {
+                cellIdentify = "adCell"
+            }else if indexPath.section == 1 {
+                cellIdentify = "digit" + String(indexPath.row % 2) + "Cell"
+            }else {
+                cellIdentify = "imgCell"
+            }
+        }else if type == .baby {
+            if indexPath.section == 0 {
+                cellIdentify = "adCell"
+            }else if indexPath.section == 1 {
+                cellIdentify = "babyCell"
+            }else {
+                cellIdentify = "imgCell"
+            }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify, for: indexPath)
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .baby {
             if indexPath.section == 0 {
                 self.adCollectionView = (cell.viewWithTag(1) as! UICollectionView)
                 self.adCollectionView?.delegate = self
                 self.adCollectionView?.dataSource = self
             }else if indexPath.section == 1 {
-                self.typeCollectionView = (cell.viewWithTag(1) as! UICollectionView)
-                self.typeCollectionView?.delegate = self
-                self.typeCollectionView?.dataSource = self
+                if type != .baby {
+                    self.typeCollectionView = (cell.viewWithTag(1) as! UICollectionView)
+                    self.typeCollectionView?.delegate = self
+                    self.typeCollectionView?.dataSource = self
+                }else{
+                    (cell.viewWithTag(2) as! UIButton).addTarget(self, action: #selector(babyBtnDidClick(_:)), for: .touchUpInside)
+                    (cell.viewWithTag(3) as! UIButton).addTarget(self, action: #selector(babyBtnDidClick(_:)), for: .touchUpInside)
+                }
             }else {
                 let dic = self.imgDataSource[indexPath.row] as! NSDictionary
                 (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
@@ -309,12 +387,27 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
                 (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
                 (cell.viewWithTag(2) as! UILabel).text = dic["brand_name"] as? String
             }
+        }else if type == .digit {
+            if indexPath.section == 0 {
+                self.adCollectionView = (cell.viewWithTag(1) as! UICollectionView)
+                self.adCollectionView?.delegate = self
+                self.adCollectionView?.dataSource = self
+            }else if indexPath.section == 1 {
+                let dic = self.typeDataSource![indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["type_img"] as! String)))
+                (cell.viewWithTag(2) as! UILabel).text = dic["type_title"] as? String
+                cell.viewWithTag(3)?.layer.cornerRadius = 4
+            }else {
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["img_kuan"] as! String)))
+                (cell.viewWithTag(2) as! UILabel).text = dic["brand_name"] as? String
+            }
         }
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .baby {
             if indexPath.section == 2 {
                 let vc = BrandViewController.getInstance()
                 let dic = self.imgDataSource[indexPath.row] as! NSDictionary
@@ -328,12 +421,24 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
                 vc.brandInfo = dic
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        }else if type == .digit {
+            if indexPath.section == 2 {
+                let vc = BrandViewController.getInstance()
+                let dic = self.imgDataSource[indexPath.row] as! NSDictionary
+                vc.brandInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else if indexPath.section == 1 {
+                let dic = self.typeDataSource?[indexPath.row] as! NSDictionary
+                let vc = TypeDetailViewController.getInstance()
+                vc.typeInfo = dic
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     
     // MARK: - Collection view data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if type == .girl || type == .bag{
+        if type == .girl || type == .bag || type == .digit || type == .baby {
             if collectionView == self.adCollectionView {
                 if self.adImageDataSource == nil {
                     return 0
@@ -465,6 +570,17 @@ class GoodClassViewController: UITableViewController, UICollectionViewDelegate, 
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func babyBtnDidClick(_ sender: UIButton) -> Void {
+        if (self.typeDataSource?.count)! > sender.tag - 2 {
+            let dic = self.typeDataSource?[sender.tag - 2] as! NSDictionary
+            let vc = TypeDetailViewController.getInstance()
+            vc.typeInfo = dic
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            SVProgressHUD.showError(withStatus: "功能建设中")
+        }
+    }
     
     func requestGoodClass() {
         SVProgressHUD.show()
