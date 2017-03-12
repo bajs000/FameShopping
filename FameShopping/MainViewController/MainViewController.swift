@@ -268,6 +268,14 @@ class MainViewController: UITableViewController, UICollectionViewDelegate,UIColl
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if collectionView == todayCollectionView {
+            return UIEdgeInsetsMake(10, 0, 10, 10)
+        }else {
+            return UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

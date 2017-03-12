@@ -18,6 +18,10 @@ class MenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if UserModel.share.avatar.characters.count > 0 {
             self.avatar.sd_setImage(with: URL(string: UserModel.share.avatar), placeholderImage: UIImage(named: "user-default-icon"))
             self.nickname.text = UserModel.share.userName
