@@ -78,6 +78,7 @@
     {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         imageView.frame = CGRectMake(i * frame.size.width / self.numberOfStar, 0, frame.size.width / self.numberOfStar, frame.size.height);
+        imageView.contentMode = UIViewContentModeCenter;
         [view addSubview:imageView];
     }
     return view;

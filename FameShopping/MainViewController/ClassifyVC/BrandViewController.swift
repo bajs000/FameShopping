@@ -13,9 +13,11 @@ import SDWebImage
 class BrandViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var brandLikeItem: UIBarButtonItem!
+    
     var dataSource: NSArray?
     var collectionId = ""
     var brandInfo: NSDictionary?
+    var addParam = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +81,7 @@ class BrandViewController: UICollectionViewController, UICollectionViewDelegateF
         if section == 0 {
             return UIEdgeInsetsMake(0, 0, 0, 0)
         }else {
-            return UIEdgeInsetsMake(10, 12, 0, 12)
+            return UIEdgeInsetsMake(10, 12, 10, 12)
         }
     }
 
@@ -96,6 +98,10 @@ class BrandViewController: UICollectionViewController, UICollectionViewDelegateF
                 (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (self.brandInfo!["img"] as! String)))
             }else{
                 (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (self.brandInfo!["img_kuan"] as! String)))
+            }
+            for i in 11...15 {
+                let btn = cell.viewWithTag(i) as! UIButton
+                btn.addTarget(self, action: #selector(sortBtnDidClick(_:)), for: .touchUpInside)
             }
         }else {
             let dic = dataSource![indexPath.row] as! NSDictionary
@@ -153,6 +159,49 @@ class BrandViewController: UICollectionViewController, UICollectionViewDelegateF
         if UserModel.checkUserLogin(at: self){
             self.requestCollection()
         }
+    }
+    
+    func sortBtnDidClick(_ sender: UIButton) -> Void {
+        sender.isSelected = !sender.isSelected
+        switch sender.tag {
+        case 11:
+            break
+        case 12:
+            if sender.isSelected {
+                addParam["order"] = "pricez"
+                (sender.superview?.viewWithTag(13) as! UIButton).isSelected = false
+            }else {
+                addParam["order"] = "pricej"
+            }
+            break
+        case 13:
+            if sender.isSelected {
+                addParam["order"] = "salesz"
+                (sender.superview?.viewWithTag(12) as! UIButton).isSelected = false
+            }else {
+                addParam["order"] = "salesj"
+            }
+            break
+        case 14:
+            if sender.isSelected {
+                (sender.superview?.viewWithTag(15) as! UIButton).isSelected = false
+                addParam["nature"] = "remen"
+            }else {
+                addParam["nature"] = ""
+            }
+            break
+        case 15:
+            if sender.isSelected {
+                (sender.superview?.viewWithTag(14) as! UIButton).isSelected = false
+                addParam["nature"] = "xinpin"
+            }else {
+                addParam["nature"] = ""
+            }
+            break
+        default:
+            break
+        }
+        self.requestBrandList()
     }
     
     func requestBrandList() -> Void {
