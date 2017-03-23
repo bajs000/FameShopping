@@ -22,6 +22,7 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var acceptView: UIView!
     @IBOutlet var tap: UITapGestureRecognizer!
+    @IBOutlet weak var footerView: UIView!
     
     var cartDataSource:NSArray?
     var addressDataSource:NSDictionary?
@@ -195,6 +196,14 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
                     self.addressLabel.text = (((dic as! NSDictionary)["address"] as! NSDictionary)["province_name"] as! String) + (((dic as! NSDictionary)["address"] as! NSDictionary)["city_name"] as! String) + (((dic as! NSDictionary)["address"] as! NSDictionary)["district_name"] as! String) + (((dic as! NSDictionary)["address"] as! NSDictionary)["address"] as! String)
                     self.timeLabel.text = ((dic as! NSDictionary)["address"] as! NSDictionary)["time"] as? String
                     self.totalMoney.text = "￥" + ((dic as! NSDictionary)["total_price"] as! NSNumber).stringValue
+                    
+                    if (dic as! NSDictionary)["zengsonglst"] != nil && ((dic as! NSDictionary)["zengsonglst"] as! NSObject).isKind(of: NSDictionary.self) {
+                        self.footerView.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 55)
+                        (self.footerView.viewWithTag(1) as! UILabel).text = ((dic as! NSDictionary)["zengsonglst"] as! NSDictionary)["title"] as? String
+                        self.tableView.tableFooterView = self.footerView
+                    }
+                    
+                    
                 }
                 self.tableView.reloadData()
             }else{
@@ -209,7 +218,11 @@ class CommitOrderViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         SVProgressHUD.show()
-        NetworkModel.request(["user_id":UserModel.share.userId,"add_id":self.addressDataSource?["add_id"] as! String,"shsj":self.timeLabel.text!], url: "/Order/order_add") { (dic) in
+        var param = ["user_id":UserModel.share.userId,"add_id":self.addressDataSource?["add_id"] as! String,"shsj":self.timeLabel.text!]
+        if self.cartDic?["zengsonglst"] != nil && (self.cartDic?["zengsonglst"] as! NSObject).isKind(of: NSDictionary.self) {
+            param["zs_id"] = (self.cartDic?["zengsonglst"] as! NSDictionary)["zs_id"] as? String
+        }
+        NetworkModel.request(param as NSDictionary, url: "/Order/order_add") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                 SVProgressHUD.dismiss()
                 print(dic)

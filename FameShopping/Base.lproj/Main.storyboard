@@ -7002,6 +7002,7 @@
                         <outlet property="addressLabel" destination="OAr-n8-0Ug" id="L5l-3D-UVF"/>
                         <outlet property="areaView" destination="HqJ-XN-hes" id="DCB-jg-vmt"/>
                         <outlet property="blackView" destination="4OV-87-Yor" id="J4H-GQ-70k"/>
+                        <outlet property="footerView" destination="l2k-3t-a9b" id="ed9-g5-AZY"/>
                         <outlet property="phoneNum" destination="W6L-Mz-I41" id="Jmh-J4-xdM"/>
                         <outlet property="tableView" destination="Tl6-8Z-9Qd" id="QkF-7f-ZGC"/>
                         <outlet property="tap" destination="tvM-Bl-Lc5" id="hj3-Wu-NRF"/>
@@ -7016,6 +7017,23 @@
                         <action selector="blackViewDidTap:" destination="Tjc-zK-MeO" id="NAZ-03-saD"/>
                     </connections>
                 </tapGestureRecognizer>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="l2k-3t-a9b">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt3-eq-eFU">
+                            <rect key="frame" x="12" y="19" width="36" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.25098039215686274" green="0.25490196079999999" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Zt3-eq-eFU" firstAttribute="centerY" secondItem="l2k-3t-a9b" secondAttribute="centerY" id="J81-9p-0RM"/>
+                        <constraint firstItem="Zt3-eq-eFU" firstAttribute="leading" secondItem="l2k-3t-a9b" secondAttribute="leading" constant="12" id="dVF-dq-hJa"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2768.8000000000002" y="-799.2503748125938"/>
         </scene>
