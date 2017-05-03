@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         drawer = self.window?.rootViewController as? ITRAirSideMenu
         drawer?.contentViewController = tabbar
         drawer?.leftMenuViewController = menuVC
+        WXApi.registerApp("wx7e0e8330c1e9e030")
         return true
     }
     
@@ -36,6 +37,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ((tabbar.selectedViewController as! UINavigationController).topViewController as! MainViewController).menuTableDidSelect(indexPath)
     }
 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if !"\(url)".hasPrefix("wx7e0e8330c1e9e030"){
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url) { (dic) in
+                SVProgressHUD.dismiss()
+                if (dic?["resultStatus"] as! String) == "9000" {
+                    SVProgressHUD.showSuccess(withStatus: "支付成功")
+                    ((self.drawer?.contentViewController as! UITabBarController).selectedViewController as! UINavigationController).popToRootViewController(animated: true)
+                    //                ((self.window?.rootViewController as! UITabBarController).selectedViewController as! UINavigationController).popToRootViewController(animated: true)
+                }else{
+                    SVProgressHUD.showError(withStatus: dic?["memo"] as! String)
+                }
+            }
+        }
+        return WXApi.handleOpen(url, delegate: WXApiManager.shared())
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        return WXApi.handleOpen(url, delegate: WXApiManager.shared())
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

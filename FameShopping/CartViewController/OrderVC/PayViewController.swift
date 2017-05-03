@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -117,5 +118,33 @@ class PayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func sureToPay(_ sender: Any) {
+        if currentIndexPath.row == 1 {
+            var money = self.totalMoney.text?.substring(from: (self.totalMoney.text?.index((self.totalMoney.text?.startIndex)!, offsetBy: 1))!)
+            if money == "0" {
+                money = "0.01"
+            }
+            AlipaySend.toAlipay(dealNo!, withSubject: "名品汇商品", withBody: "b", withTotalFee: Float(money!)!, callback: { (dic) in
+                
+            })
+        }else if currentIndexPath.row == 3 {
+            if cartDic?["deal_no"] == nil {
+                let tempDic = NSMutableDictionary(dictionary: self.cartDic!)
+                tempDic["deal_no"] = self.dealNo
+                self.cartDic = tempDic
+            }
+            startWeiChatPAy.jump(toBizPay: cartDic as! [AnyHashable : Any]!)
+            WXApiManager.shared().result = {(resp) in
+                SVProgressHUD.dismiss()
+                if resp?.errCode != 0 {
+                    SVProgressHUD.showError(withStatus: "支付失败")
+                }else{
+                    _ = self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }else{
+            SVProgressHUD.showError(withStatus: "敬请期待")
+        }
+    }
 
 }

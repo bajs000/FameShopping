@@ -9,3 +9,8 @@
 #import "ITRAirSideMenu.h"
 #import <AFNetworking/AFNetworking.h>
 #import "TQStarRatingView.h"
+#import "AlipaySend.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "startWeiChatPAy.h"
+#import "WXApi.h"
+#import "WXApiManager.h"
