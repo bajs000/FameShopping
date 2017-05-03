@@ -74,6 +74,11 @@ class RefundViewController: OrderBaseVC {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let dic = self.dataSource![section] as! NSDictionary
+        if  dic["zengsong_status"] != nil && (dic["zengsong_status"] as! NSObject).isKind(of: NSString.self) && (dic["zengsong_status"] as! String) == "1" {
+            return 65
+        }
+//        return 65
         return 35
     }
 
@@ -120,6 +125,12 @@ class RefundViewController: OrderBaseVC {
         let dic = (self.dataSource![section] as! NSDictionary)["order"] as! NSDictionary
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 65))
         footerView.backgroundColor = UIColor.white
+        
+        let presentLabel = UILabel(frame: CGRect(x: 12, y: 37, width: Helpers.screanSize().width - 24, height: 25))
+        presentLabel.text = /*"满200送一个月爱奇艺会员"*/dic["zengsong"] as? String
+        presentLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
+        presentLabel.font = UIFont.systemFont(ofSize: 12)
+        footerView.addSubview(presentLabel)
         
         let moneyLabel = UILabel(frame :CGRect(x: 12, y: 0, width: 100, height: 32))
         footerView.addSubview(moneyLabel)

@@ -196,9 +196,18 @@ class AllOrderViewController: OrderBaseVC {
             moneyLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
             moneyLabel.textAlignment = .right
             moneyLabel.text = "合计：￥" + (dic["total_price"] as! String)
+            
+            let size = (moneyLabel.text! as NSString).boundingRect(with: CGSize(width: Helpers.screanSize().width - 24, height: 32), options: [.truncatesLastVisibleLine,.usesLineFragmentOrigin,.usesFontLeading], attributes: [NSFontAttributeName:moneyLabel.font], context: nil).size
+            
             let tempStr = NSMutableAttributedString(string: moneyLabel.text!)
             tempStr.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), range: NSMakeRange(3, (dic["total_price"] as! String).characters.count + 1))
             moneyLabel.attributedText = tempStr
+            
+            let presentLabel = UILabel(frame: CGRect(x: 12, y: 5, width: Helpers.screanSize().width - size.width - 12 - 8, height: 25))
+            presentLabel.text = dic["zengsong"] as? String
+            presentLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
+            presentLabel.font = UIFont.systemFont(ofSize: 12)
+            footerView.addSubview(presentLabel)
             
             let payBtn = UIButton(type: .custom)
             footerView.addSubview(payBtn)
@@ -216,6 +225,12 @@ class AllOrderViewController: OrderBaseVC {
         }else if Int(dic["status"] as! String) == OrderType.needAccept.rawValue {
             let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 65))
             footerView.backgroundColor = UIColor.white
+            
+            let presentLabel = UILabel(frame: CGRect(x: 12, y: 5, width: Helpers.screanSize().width - 150 - 12 - 12 - 8, height: 25))
+            presentLabel.text = dic["zengsong"] as? String
+            presentLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
+            presentLabel.font = UIFont.systemFont(ofSize: 12)
+            footerView.addSubview(presentLabel)
             
             let sureGoods = UIButton(type: .custom)
             footerView.addSubview(sureGoods)
@@ -252,9 +267,18 @@ class AllOrderViewController: OrderBaseVC {
             moneyLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
             moneyLabel.textAlignment = .right
             moneyLabel.text = "合计：￥" + (dic["total_price"] as! String)
+            
+            let size = (moneyLabel.text! as NSString).boundingRect(with: CGSize(width: Helpers.screanSize().width - 24, height: 32), options: [.truncatesLastVisibleLine,.usesLineFragmentOrigin,.usesFontLeading], attributes: [NSFontAttributeName:moneyLabel.font], context: nil).size
+            
             let tempStr = NSMutableAttributedString(string: moneyLabel.text!)
             tempStr.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.9144125581, green: 0.3713477254, blue: 0.5323973894, alpha: 1), range: NSMakeRange(3, (dic["total_price"] as! String).characters.count + 1))
             moneyLabel.attributedText = tempStr
+            
+            let presentLabel = UILabel(frame: CGRect(x: 12, y: 5, width: Helpers.screanSize().width - size.width - 12 - 8, height: 25))
+            presentLabel.text = dic["zengsong"] as? String
+            presentLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
+            presentLabel.font = UIFont.systemFont(ofSize: 12)
+            footerView.addSubview(presentLabel)
             
             let payBtn = UIButton(type: .custom)
             footerView.addSubview(payBtn)

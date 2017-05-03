@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var drawer: ITRAirSideMenu?
+    var showInfoBtn: UIButton?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SVProgressHUD.setMinimumDismissTimeInterval(1)
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         drawer?.contentViewController = tabbar
         drawer?.leftMenuViewController = menuVC
         WXApi.registerApp("wx7e0e8330c1e9e030")
+        self.showInfo()
+    
         return true
     }
     
@@ -35,6 +38,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         drawer?.hideViewController()
         let tabbar = drawer?.contentViewController as! UITabBarController
         ((tabbar.selectedViewController as! UINavigationController).topViewController as! MainViewController).menuTableDidSelect(indexPath)
+    }
+    
+    func showInfo() -> Void {
+        showInfoBtn = UIButton(type: .custom)
+        showInfoBtn?.frame = CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: Helpers.screanSize().height)
+        self.showInfoBtn!.alpha = 1
+        showInfoBtn?.setImage(#imageLiteral(resourceName: "app-info"), for: .normal)
+        showInfoBtn?.addTarget(self, action: #selector(hideAppInfo), for: .touchUpInside)
+        self.drawer?.view.addSubview(showInfoBtn!)
+        
+        self.perform(#selector(hideAppInfo), with: nil, afterDelay: 3)
+    }
+    
+    func hideAppInfo() -> Void {
+        UIView.animate(withDuration: 0.3, animations: { 
+            self.showInfoBtn!.alpha = 0
+        }) { (finish) in
+            self.showInfoBtn!.removeFromSuperview()
+        }
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

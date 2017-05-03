@@ -117,6 +117,14 @@ class NeedAcceptViewController: OrderBaseVC {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Helpers.screanSize().width, height: 65))
         footerView.backgroundColor = UIColor.white
         
+        let dic = self.dataSource![section] as! NSDictionary
+        
+        let presentLabel = UILabel(frame: CGRect(x: 12, y: 5, width: Helpers.screanSize().width - 150 - 12 - 12 - 8, height: 25))
+        presentLabel.text = dic["zengsong"] as? String
+        presentLabel.textColor = #colorLiteral(red: 0.3190122843, green: 0.324126184, blue: 0.3451784253, alpha: 1)
+        presentLabel.font = UIFont.systemFont(ofSize: 12)
+        footerView.addSubview(presentLabel)
+        
         let sureGoods = UIButton(type: .custom)
         footerView.addSubview(sureGoods)
         sureGoods.frame = CGRect(x: Helpers.screanSize().width - 75 - 12 , y: 5, width: 75, height: 25)

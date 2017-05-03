@@ -14,6 +14,7 @@ class TypeDetailViewController: UICollectionViewController, UICollectionViewDele
 
     var typeInfo:NSDictionary?
     var dataSource: NSArray?
+    var addParam = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +86,10 @@ class TypeDetailViewController: UICollectionViewController, UICollectionViewDele
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentify, for: indexPath)
         if indexPath.section == 0 {
-            
+            for i in 11...15 {
+                let btn = cell.viewWithTag(i) as! UIButton
+                btn.addTarget(self, action: #selector(sortBtnDidClick(_:)), for: .touchUpInside)
+            }
         }else {
             let dic = dataSource![indexPath.row] as! NSDictionary
             (cell.viewWithTag(1) as! UIImageView).sd_setImage(with: URL(string: Helpers.baseImgUrl() + (dic["graphic"] as! String)))
@@ -137,9 +141,55 @@ class TypeDetailViewController: UICollectionViewController, UICollectionViewDele
     }
     */
     
+    func sortBtnDidClick(_ sender: UIButton) -> Void {
+        sender.isSelected = !sender.isSelected
+        switch sender.tag {
+        case 11:
+            break
+        case 12:
+            if sender.isSelected {
+                addParam["order"] = "pricez"
+                (sender.superview?.viewWithTag(13) as! UIButton).isSelected = false
+            }else {
+                addParam["order"] = "pricej"
+            }
+            break
+        case 13:
+            if sender.isSelected {
+                addParam["order"] = "salesz"
+                (sender.superview?.viewWithTag(12) as! UIButton).isSelected = false
+            }else {
+                addParam["order"] = "salesj"
+            }
+            break
+        case 14:
+            if sender.isSelected {
+                (sender.superview?.viewWithTag(15) as! UIButton).isSelected = false
+                addParam["nature"] = "remen"
+            }else {
+                addParam["nature"] = ""
+            }
+            break
+        case 15:
+            if sender.isSelected {
+                (sender.superview?.viewWithTag(14) as! UIButton).isSelected = false
+                addParam["nature"] = "xinpin"
+            }else {
+                addParam["nature"] = ""
+            }
+            break
+        default:
+            break
+        }
+        self.requestBrandList()
+    }
+    
     func requestBrandList() -> Void {
         SVProgressHUD.show()
-        let param = ["type_id":self.typeInfo!["type_id"] as! String,"page":"1"]
+        var param = ["type_id":self.typeInfo!["type_id"] as! String,"page":"1"]
+        for key in addParam.keys {
+            param[key] = addParam[key]
+        }
         NetworkModel.request(param as NSDictionary, url: "/Public/goods_list") { (dic) in
             if Int((dic as! NSDictionary)["code"] as! String) == 200 {
                 SVProgressHUD.dismiss()
