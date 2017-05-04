@@ -53,6 +53,15 @@ class PayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 4
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            if indexPath.row == 2 {
+                return 0
+            }
+        }
+        return 55
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
